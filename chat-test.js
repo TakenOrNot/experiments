@@ -61,11 +61,11 @@
     });
     $('#chatbox').mouseleave(function() {
         window.fancychatscrolltop = true;
-        /*
-        $('#chatlines > .fancychatline').each(function() {
+        
+        $('#chatlines > .fancychathiden').each(function() {
             $(this).css({display: "none"});
         });
-        */
+        
     });
     
     
