@@ -74,7 +74,7 @@
                 $(this).delay(1000).fadeIn("slow");
             });
             */
-            $('#chatlines > .line').not('fancychatline').each(function( index ) {
+            $('#chatlines > .line').not('.fancychatline').each(function( index ) {
                 $(this).delay(1000).fadeIn("slow");
             });
             $("#fancychatbtn").html('FancyChat');
