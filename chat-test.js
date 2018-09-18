@@ -69,7 +69,7 @@
             $('#chatlines').addClass('fancychatmode');
             
             $('#chatlines > .line').each(function( index ) {
-                $(this).delay(1000).fadeOut("slow");
+                $(this).delay(1000).fadeOut("slow").addClass('fancychatline');
             });
             
             $("#fancychatbtn").html('Disable FC');
