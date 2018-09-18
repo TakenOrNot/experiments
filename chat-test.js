@@ -116,11 +116,11 @@
             
              $('#chatlines > .fancychatline:visible').not( ".fancychathiden" ).addClass('fancychathiden').each(function( index ) {
                 if ($(this).find(">:first-child").hasClass('whisper') || $(this).find(">:first-child").hasClass('team')) {
-                    $(this).delay(30000).fadeToggle("slow", function() {$(this).css({display: "none"});});
+                    $(this).delay(45000).fadeToggle("slow", function() {$(this).css({display: "none"});});
                     
                 } 
                 else {
-                    $(this).delay(10000).fadeToggle("slow", function() {$(this).css({display: "none"});});
+                    $(this).delay(20000).fadeToggle("slow", function() {$(this).css({display: "none"});});
                     
                 }
                  
@@ -135,20 +135,7 @@
             // else 
             // delay 10
         }
-    });
-    
-    function onKeydown ( event ) {
-        
-        if ( event.originalEvent.key === 'v' ) { //note: This is not reliable to know if player is actually spectating
-
-            event.stopImmediatePropagation ();
-               
-            
-        }
-
-        
-    }
-    
+    });   
     
     /* REGISTER */
 

@@ -113,19 +113,6 @@
         }
     });
     */
-        
-        
-    function onKeydown ( event ) {
-        
-        if ( event.originalEvent.key === 'v' ) { //note: This is not reliable to know if player is actually spectating
-
-            event.stopImmediatePropagation ();
-               
-            
-        }
-
-        
-    }
     
     
     /* REGISTER */
