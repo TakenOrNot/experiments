@@ -54,7 +54,7 @@
         if (fancychat == false) {
             fancychat = true;
 
-            // TODO: add a fancychatmode class to #chatlines
+            // add a fancychatmode class to #chatlines
             $('#chatlines').addClass('fancychatmode');
             
             $('#chatlines > .line').each(function( index ) {
@@ -67,10 +67,14 @@
         else {
             fancychat = false;
             
-            // TODO: remove fancychatmode class to #chatlines
+            // remove fancychatmode class to #chatlines
             $('#chatlines').removeClass('fancychatmode');
-            
+            /*
             $('#chatlines > .line').each(function( index ) {
+                $(this).delay(1000).fadeIn("slow");
+            });
+            */
+            $('#chatlines > .line').not('fancychatline').each(function( index ) {
                 $(this).delay(1000).fadeIn("slow");
             });
             $("#fancychatbtn").html('FancyChat');
