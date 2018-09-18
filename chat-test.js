@@ -22,7 +22,9 @@
         const focusStyle = `
                     <style id='fancychatStyle'>
                         
-                        .fancychatmode .line:not(.fancychatline) {display:none;} 
+                        .fancychatline {display:none;}
+                        .fancychatmode .line:not(.fancychatline) {display:none;}
+                        .fancychatmode .fancychatline {display:block;}
                         
                         .fancychatmode > #chatbox > #chatlines > .line {opacity:1; -webkit-animation: fadeaway .5s forwards; animation-iteration-count: 1;}
                         
