@@ -53,13 +53,13 @@
     $('#minimizechatcontainer').append ("<div id='fancychatGUIcontainer' style='display: block;'><div id='fancychatbtn' style='display: block; position: absolute; right: 150px; width: 80px; height: 15px; padding: 5px; background: rgba(0, 0, 0, 0.5); border-radius: 5px; text-align: center; color: #EEE; font-size: 10px; cursor: pointer;'>FancyChat</div></div>");
 
     
-    $('#chatlines').mouseenter(function() {
+    $('#chatbox').mouseenter(function() {
         window.fancychatscrolltop = false;
         $('#chatlines > .fancychatline').each(function() {
             $(this).css({display: "block"});
         });
     });
-    $('#chatlines').mouseleave(function() {
+    $('#chatbox').mouseleave(function() {
         window.fancychatscrolltop = true;
         /*
         $('#chatlines > .fancychatline').each(function() {
