@@ -22,7 +22,7 @@
         const focusStyle = `
                     <style id='fancychatStyle'>
                         
-                        .fancychatmode .line:not(.fancychatline) {display:none;} 
+                        
                         
                         .fancychatmode > #chatbox > #chatlines > .line {opacity:1; -webkit-animation: fadeaway .5s forwards; animation-iteration-count: 1;}
                         
@@ -53,7 +53,6 @@
             fancychat = true;
 
             // TODO: add a fancychatmode class to #chatlines
-            $('#chatlines').addClass('fancychatmode');
             
             $('#chatlines > .line').each(function( index ) {
                 $(this).delay(1000).fadeOut("slow");
@@ -66,7 +65,6 @@
             fancychat = false;
             
             // TODO: remove fancychatmode class to #chatlines
-            $('#chatlines').removeClass('fancychatmode');
             
             $('#chatlines > .line').each(function( index ) {
                 $(this).delay(1000).fadeIn("slow");
@@ -96,16 +94,14 @@
             //$('#chatlines > .line:first').delay(10000).slideDown("slow");
             
             // TODO: add a fancychatline class to the inserted chat line
-            //$(chatline).insertBefore( "#chatlines > .line:first" );
-            $(chatline).insertBefore( "#chatlines > .line:first" ).addClass('fancychatline');
+            $(chatline).insertBefore( "#chatlines > .line:first" );
             // TODO: dont remove last line, just hide it via CSS
             // .fancychatmode .line:not(.fancychatline) {display:none;} 
-            //$('#chatlines > .line:last').remove();
+            $('#chatlines > .line:last').remove();
             
-            // target all visible fancychatlines
+            // target all visible lines
  
-            //$('#chatlines > .line:visible').not( ".fancychathiden" ).addClass('fancychathiden').delay(10000).fadeToggle("slow", function() {$(this).css({display: "none"});});
-            $('#chatlines > .fancychatline:visible').not( ".fancychathiden" ).addClass('fancychathiden').delay(10000).fadeToggle("slow", function() {$(this).css({display: "none"});});
+            $('#chatlines > .line:visible').not( ".fancychathiden" ).addClass('fancychathiden').delay(10000).fadeToggle("slow", function() {$(this).css({display: "none"});});
             
             //.not( ".focushiden" )
             //$('#chatlines > .line:first').delay(10000).slideDown("slow");
