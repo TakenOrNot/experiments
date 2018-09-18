@@ -22,20 +22,7 @@
         const focusStyle = `
                     <style id='focusmodeStyle'>
                         
-                        .focusmode > #chatbox > #chatlines > .line {opacity:1; -webkit-animation: fadeaway .5s forwards; animation-iteration-count: 1;}
                         
-                        
-
-                        @-webkit-keyframes fadeaway {
-                              from {
-
-                                opacity: 1;
-                              }
-                              to {
-
-                                opacity: 0;
-                              }
-                            }
 
                     </style>
                 `
@@ -58,11 +45,11 @@
             $('#menu').fadeToggle( "fast");
             // $('#chatbox').toggle( "slide" );
             $('#settings').fadeToggle( "fast");
-            
+            /*
             $('#chatlines > .line').each(function( index ) {
                 $(this).delay(1000).fadeOut("slow");
             });
-            
+            */
             $("#focus").html('Stop Focus');
 
         }
@@ -77,14 +64,16 @@
             $('#menu').fadeToggle( "fast");
             // $('#chatbox').toggle( "slide" );
             $('#settings').fadeToggle( "fast");
-            
+            /*
             $('#chatlines > .line').each(function( index ) {
                 $(this).delay(1000).fadeIn("slow");
             });
+            */
             $("#focus").html('Focus Mode');
         }
     });
     
+    /*
     SWAM.on ( 'gamePrep', function () {
         if (focusmode == true) {
             $('#chatlines > .line').each(function( index ) {
@@ -92,6 +81,7 @@
             });
         }
     });
+    
     
     var chatline = '';
     var newchatline = '';
@@ -122,7 +112,9 @@
             // delay 10
         }
     });
-    
+    */
+        
+        
     function onKeydown ( event ) {
         
         if ( event.originalEvent.key === 'v' ) { //note: This is not reliable to know if player is actually spectating
