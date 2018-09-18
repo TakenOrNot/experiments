@@ -101,19 +101,32 @@
             //$('#chatlines > .line:last').delay(10000).slideUp("slow");
             //$('#chatlines > .line:first').delay(10000).slideDown("slow");
             
-            // TODO: add a fancychatline class to the inserted chat line
+            // add a fancychatline class to the inserted chat line
             //$(chatline).insertBefore( "#chatlines > .line:first" );
             $(chatline).insertBefore( "#chatlines > .line:first" ).addClass('fancychatline');
-            // TODO: dont remove last line, just hide it via CSS
+            // dont remove last line, just hide it via CSS
             // .fancychatmode .line:not(.fancychatline) {display:none;} 
             //$('#chatlines > .line:last').remove();
             
             // target all visible fancychatlines
  
             //$('#chatlines > .line:visible').not( ".fancychathiden" ).addClass('fancychathiden').delay(10000).fadeToggle("slow", function() {$(this).css({display: "none"});});
-            $('#chatlines > .fancychatline:visible').not( ".fancychathiden" ).addClass('fancychathiden').delay(10000).fadeToggle("slow", function() {$(this).css({display: "none"});});
             
-            //.not( ".focushiden" )
+            //$('#chatlines > .fancychatline:visible').not( ".fancychathiden" ).addClass('fancychathiden').delay(10000).fadeToggle("slow", function() {$(this).css({display: "none"});});
+            
+             $('#chatlines > .fancychatline:visible').not( ".fancychathiden" ).addClass('fancychathiden').each(function( index ) {
+                if ($(this).find(">:first-child").hasClass('whisper')) || ($(this).find(">:first-child").hasClass('team')) {
+                    $(this).delay(30000).fadeToggle("slow", function() {$(this).css({display: "none"});});
+                    
+                } 
+                else {
+                    $(this).delay(10000).fadeToggle("slow", function() {$(this).css({display: "none"});});
+                    
+                }
+                 
+            });
+                 
+                 
             //$('#chatlines > .line:first').delay(10000).slideDown("slow");
             //$(newchatline).delay(10000).slideDown("slow");
             
