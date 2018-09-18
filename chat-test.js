@@ -55,9 +55,17 @@
     
     $('#chatlines').mouseenter(function() {
         window.fancychatscrolltop = false;
+        $('#chatlines > .fancychatline').each(function() {
+            $(this).css({display: "block"});
+        });
     });
     $('#chatlines').mouseleave(function() {
         window.fancychatscrolltop = true;
+        /*
+        $('#chatlines > .fancychatline').each(function() {
+            $(this).css({display: "none"});
+        });
+        */
     });
     
     
@@ -68,8 +76,8 @@
             // add a fancychatmode class to #chatlines
             $('#chatlines').addClass('fancychatmode');
             
-            $('#chatlines > .line').each(function( index ) {
-                $(this).delay(1000).fadeOut("slow").addClass('fancychatline');
+            $('#chatlines > .line').each(function() {
+                $(this).delay(1000).fadeOut("slow");
             });
             
             $("#fancychatbtn").html('Disable FC');
