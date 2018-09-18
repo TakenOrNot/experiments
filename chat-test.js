@@ -115,7 +115,7 @@
             //$('#chatlines > .fancychatline:visible').not( ".fancychathiden" ).addClass('fancychathiden').delay(10000).fadeToggle("slow", function() {$(this).css({display: "none"});});
             
              $('#chatlines > .fancychatline:visible').not( ".fancychathiden" ).addClass('fancychathiden').each(function( index ) {
-                if ($(this).find(">:first-child").hasClass('whisper')) || ($(this).find(">:first-child").hasClass('team')) {
+                if ($(this).find(">:first-child").hasClass('whisper') || $(this).find(">:first-child").hasClass('team')) {
                     $(this).delay(30000).fadeToggle("slow", function() {$(this).css({display: "none"});});
                     
                 } 
