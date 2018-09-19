@@ -125,6 +125,8 @@
                 
             }
             //$('#chatlines > .line:last').delay(10000).fadeToggle( "slow");
+            
+            
             chatline = $('#chatlines > .line:last')[0].outerHTML;
             
             //newchatline = $('#chatlines > .line:first').prepend(chatline);
@@ -140,21 +142,34 @@
             //    chatline = chatline.replace('testword','❌');
                 
             //}
-            
+            cleanwordstr = '';
             function checker(value) {
-                var prohibited = ['banana', 'apple'];
+                var prohibited = ['testword', 'apple'];
+				
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
-                    return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\❌$&')
+                    return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
                 }).join('|'));
-                return !regex.test(value);
+                
+                if (!regex.test(value)){
+                    console.log("not test value " + value);
+                    cleanwordstr = cleanwordstr + ' ' + value;
+                }
+                else {
+                    console.log("test value " + value);
+                    cleanwordstr = cleanwordstr + ' ❌';
+                }
+                
+                return cleanwordstr;
+                //return !regex.test(value);
             }
+            
+	
 
             wordArray = wordArray.filter(checker);
-            //chatline = wordArray.join(' '); 
-            wordArray = wordArray.join(' '); 
+ 
             
-            chatline = chatline.replace(chatlinetext,wordArray);
+            chatline = chatline.replace(chatlinetext,cleanwordstr);
             //chatline = wordArray.filter(checker).join(' ');
             
             // insert a new fancychatline with fancychatline class
