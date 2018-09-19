@@ -93,9 +93,13 @@
                 $(this).delay(1000).fadeIn("slow");
             });
             */
+            $('#chatlines > .fancychatline').css({display: "none"});
             $('#chatlines > .line').not('.fancychatline').each(function( index ) {
                 $(this).delay(1000).fadeIn("slow");
             });
+            
+            
+            
             $("#fancychatbtn").html('FancyChat');
         }
     });
