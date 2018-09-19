@@ -85,7 +85,7 @@
         }
     });
     
-    function cleanchat(chatline,chatlinetext){
+    function cleanthechat(chatline,chatlinetext){
         
             wordArray = chatlinetext.split(' ');
 
@@ -175,7 +175,7 @@
             chatlinetext = $('#chatlines > .line:last > .text').text();
             
             
-            cleanchat(chatline,chatlinetext);
+            cleanthechat(chatline,chatlinetext);
             
             $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
 
