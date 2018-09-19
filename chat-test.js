@@ -175,15 +175,7 @@
                     else if (value == 'dick'){
                         replacewith = '🍌';
                     }
-                    else if (['fag', 'faggot', 'faggots'].indexOf(value) >= 0)
-                        
-                        replacewith = '🌈';
-                    }
-                
-                    if (['pussy', 'cunt'].indexOf(value) >= 0){
-                        
-                        replacewith = '🐱';
-                    }
+                    
                     
                 
                     cleanwordstr = cleanwordstr + ' ' + replacewith;
