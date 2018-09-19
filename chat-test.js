@@ -144,9 +144,9 @@
                 return !regex.test(value);
             }
 
-            //wordArray = wordArray.filter(checker);
-            //chatline = wordArray.join(' '); 
-            chatline = wordArray.filter(checker).join(' ');
+            wordArray = wordArray.filter(checker);
+            chatline = wordArray.join(' '); 
+            //chatline = wordArray.filter(checker).join(' ');
             
             // insert a new fancychatline with fancychatline class
             
