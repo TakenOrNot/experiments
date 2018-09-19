@@ -174,10 +174,10 @@
                     else if (value == 'dick'){
                         replacewith = '🍌';
                     }
-                    else if (value == 'fag' || value == 'faggot' || value == 'faggots')
+                    else if (value == 'fag') || (value == 'faggot') || (value == 'faggots')
                         replacewith = '🌈';
                     }
-                    else if (value == 'pussy' || value == 'cunt'){
+                    else if (value == 'pussy') || (value == 'cunt'){
                         replacewith = '🐱';
                     }
                     
