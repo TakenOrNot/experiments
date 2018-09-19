@@ -176,6 +176,15 @@
                         replacewith = '🍌';
                     }
                     
+                    if (['fag', 'faggot', 'faggots'].indexOf(value) >= 0)
+                        
+                        replacewith = '🌈';
+                    }
+                
+                    if (['pussy', 'cunt'].indexOf(value) >= 0){
+                        
+                        replacewith = '🐱';
+                    }
                     
                 
                     cleanwordstr = cleanwordstr + ' ' + replacewith;
