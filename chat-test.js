@@ -144,7 +144,7 @@
             //}
             cleanwordstr = '';
             function checker(value) {
-                var prohibited = ['testword', 'apple'];
+                var prohibited = ['cunt', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'shit'];
 				
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
