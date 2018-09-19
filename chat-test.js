@@ -168,7 +168,7 @@
                     var replacewitharray = ['❌','💌','💖','🌺'];
                     // var replacewith = '💌';
                     
-                    var replacewith = replacewitharray[Math.floor(Math.random()*items.length)];
+                    var replacewith = replacewitharray[Math.floor(Math.random()*replacewitharray.length)];
                     
                     if (value == 'shit') {
                         replacewith = '💩';
