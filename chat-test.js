@@ -20,7 +20,7 @@
     
     function initStyle () {
 
-        const focusStyle = `
+        const fancychatStyle = `
                     <style id='fancychatStyle'>
                         
                         .fancychatline {display:none;}
@@ -45,7 +45,7 @@
 
                     </style>
                 `
-        $('head').append ( focusStyle );
+        $('head').append ( fancychatStyle );
     }
     
     /* GUI */
@@ -161,7 +161,9 @@
                 }
                 else {
                     console.log("test value " + value);
-                    var replacewith = '❌';
+                    //var replacewith = '❌';
+                    
+                    var replacewith = '💌';
                     
                     if (value == 'shit') {
                         replacewith = '💩';
@@ -169,7 +171,17 @@
                     else if (value == 'bullshit'){
                         replacewith = '🐮💩';
                     }
+                    else if (value == 'dick'){
+                        replacewith = '🍌';
+                    }
+                    else if (value == 'fag' || value == 'faggot' || value == 'faggots')
+                        replacewith = '🌈';
+                    }
+                    else if (value == 'pussy' || value == 'cunt'){
+                        replacewith = '🐱';
+                    }
                     
+                
                     cleanwordstr = cleanwordstr + ' ' + replacewith;
                 }
                 
