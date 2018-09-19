@@ -108,7 +108,10 @@
         }
     });
     
+    
+    
     var chatline = '';
+    var chatlinetext = '';
     var newchatline = '';
     SWAM.on ( 'chatLineAdded', function () {
         if (fancychat == true) {
@@ -128,7 +131,9 @@
             //$('#chatlines > .line:last').delay(10000).slideUp("slow");
             //$('#chatlines > .line:first').delay(10000).slideDown("slow");
             
-            wordArray = chatline.split(' ');
+            chatlinetext = $('#chatlines > .line:last > .text');
+            
+            wordArray = chatlinetext.split(' ');
             // language test
             //if (chatline.includes("testword")){
             //    console.log('language !')
@@ -140,13 +145,16 @@
                 var prohibited = ['banana', 'apple'];
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
-                    return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '❌')
+                    return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\❌$&')
                 }).join('|'));
                 return !regex.test(value);
             }
 
             wordArray = wordArray.filter(checker);
-            chatline = wordArray.join(' '); 
+            //chatline = wordArray.join(' '); 
+            wordArray = wordArray.join(' '); 
+            
+            chatline = chatline.replace(chatlinetext,wordArray);
             //chatline = wordArray.filter(checker).join(' ');
             
             // insert a new fancychatline with fancychatline class
