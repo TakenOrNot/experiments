@@ -160,7 +160,10 @@
                     var replacewith = '❌';
                     
                     if (value == 'shit') {
-                        replacewith = ' 💩'
+                        replacewith = '💩';
+                    }
+                    else if (value == 'bullshit'){
+                        replacewith = '🐮💩';
                     }
                     
                     cleanwordstr = cleanwordstr + ' ' + replacewith;
