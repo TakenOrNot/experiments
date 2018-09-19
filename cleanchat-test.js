@@ -183,7 +183,7 @@
         }
         
     });   
-    
+     
     /* REGISTER */
 
     SWAM.registerExtension ({
