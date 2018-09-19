@@ -129,7 +129,8 @@
             //$('#chatlines > .line:first').delay(10000).slideDown("slow");
             
             // language test
-            if (chatline.includes("testword")){
+            if (chatline.text().includes("testword")){
+                console.log('language !')
                 chatline.replace('testword','❌');
                 
             }
