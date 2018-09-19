@@ -131,7 +131,7 @@
             //$('#chatlines > .line:last').delay(10000).slideUp("slow");
             //$('#chatlines > .line:first').delay(10000).slideDown("slow");
             
-            chatlinetext = $('#chatlines > .line:last > .text');
+            chatlinetext = $('#chatlines > .line:last > .text').text();
             
             wordArray = chatlinetext.split(' ');
             // language test
