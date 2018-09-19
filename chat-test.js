@@ -55,7 +55,7 @@
     
     $('#chatbox').mouseenter(function() {
         window.fancychatscrolltop = false;
-        $('#chatlines > .fancychatline').each(function() {
+        $('.fancychatmode > .fancychatline').each(function() {
             $(this).css({display: "block"});
         });
     });
