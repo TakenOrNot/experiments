@@ -157,7 +157,13 @@
                 }
                 else {
                     console.log("test value " + value);
-                    cleanwordstr = cleanwordstr + ' ❌';
+                    var replacewith = '❌';
+                    
+                    if (value == 'shit') {
+                        replacewith = ' 💩'
+                    }
+                    
+                    cleanwordstr = cleanwordstr + ' ' + replacewith;
                 }
                 
                 return cleanwordstr;
