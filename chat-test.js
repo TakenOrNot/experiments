@@ -139,7 +139,8 @@
             function checker(value) {
                 var prohibited = ['banana', 'apple'];
                 var regex = new RegExp(prohibited.map(function(s) {
-                    return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
+                    //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
+                    return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '❌')
                 }).join('|'));
                 return !regex.test(value);
             }
