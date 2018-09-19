@@ -128,8 +128,15 @@
             //$('#chatlines > .line:last').delay(10000).slideUp("slow");
             //$('#chatlines > .line:first').delay(10000).slideDown("slow");
             
-            // add a fancychatline class to the inserted chat line
-            //$(chatline).insertBefore( "#chatlines > .line:first" );
+            // language test
+            if (chatline.includes("testword")){
+                chatline.replace('testword','❌');
+                
+            }
+            
+            
+            // insert a new fancychatline with fancychatline class
+            
             $(chatline).insertBefore( "#chatlines > .line:first" ).addClass('fancychatline');
             // dont remove last line, just hide it via CSS
             // .fancychatmode .line:not(.fancychatline) {display:none;} 
@@ -156,6 +163,8 @@
                     });
                     
                 }
+                 
+                 
                  
             });
                  
