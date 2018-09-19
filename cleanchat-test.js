@@ -175,7 +175,7 @@
             chatlinetext = $('#chatlines > .line:last > .text').text();
             
             
-            cleanthechat(chatline,chatlinetext);
+            chatline = cleanthechat(chatline,chatlinetext);
             
             $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
 
