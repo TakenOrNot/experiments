@@ -148,7 +148,7 @@
             //}
             cleanwordstr = '';
             function checker(value) {
-                var prohibited = ['cunt', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'shit'];
+                var prohibited = ['bitch', 'cunt', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup'];
 				
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
@@ -161,10 +161,14 @@
                 }
                 else {
                     console.log("test value " + value);
-                    //var replacewith = '❌';
+                    //X mark : ❌
+                    // love letter : 💌
+                    // sparkling heart : 💖
+                    // hibiscus : 🌺
+                    var replacewitharray = ['❌','💌','💖','🌺'];
+                    // var replacewith = '💌';
                     
-                    var replacewith = '💌';
-                    
+                    var replacewith = _.shuffle(replacewitharray)[0];
                     
                     if (value == 'shit') {
                         replacewith = '💩';
@@ -182,6 +186,9 @@
                     else if (['pussy', 'cunt'].indexOf(value) >= 0){
                         
                         replacewith = '🐱';
+                    }
+                    else if (['bitch', 'bitches'].indexOf(value) >= 0){
+                       replacewith = '🚺';
                     }
                     
                 
