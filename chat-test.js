@@ -165,6 +165,7 @@
                     
                     var replacewith = '💌';
                     
+                    
                     if (value == 'shit') {
                         replacewith = '💩';
                     }
@@ -178,7 +179,8 @@
                         
                         replacewith = '🌈';
                     }
-                    else if (['pussy', 'cunt'].indexOf(value) >= 0){
+                
+                    if (['pussy', 'cunt'].indexOf(value) >= 0){
                         
                         replacewith = '🐱';
                     }
