@@ -128,13 +128,24 @@
             //$('#chatlines > .line:last').delay(10000).slideUp("slow");
             //$('#chatlines > .line:first').delay(10000).slideDown("slow");
             
+            wordArray = chatline.split(' ');
             // language test
-            if (chatline.includes("testword")){
-                console.log('language !')
-                chatline = chatline.replace('testword','❌');
+            //if (chatline.includes("testword")){
+            //    console.log('language !')
+            //    chatline = chatline.replace('testword','❌');
                 
-            }
+            //}
             
+            function checker(value) {
+                var prohibited = ['banana', 'apple'];
+                var regex = new RegExp(prohibited.map(function(s) {
+                    return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
+                }).join('|'));
+                return !regex.test(value);
+            }
+
+            wordArray = wordArray.filter(checker);
+            console.log(wordArray);
             
             // insert a new fancychatline with fancychatline class
             
