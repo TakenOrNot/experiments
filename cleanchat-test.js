@@ -180,7 +180,7 @@
             $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
             
             var chatbox    = $('#chatbox');
-            var cbheight = wtf[0].scrollHeight;
+            var cbheight = chatbox[0].scrollHeight;
             chatbox.scrollTop(cbheight);
 
         }
