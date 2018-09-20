@@ -19,6 +19,7 @@
     
     var chatline = '';
     var chatlinetext = '';
+    //var newchatline = '';
     
     function initStyle () {
 
@@ -49,8 +50,30 @@
             // add a cleanchatmode class to #chatlines
             $('#chatlines').addClass('cleanchatmode');
             
-            $('#chatlines > .line').each(function() {
+            $('#chatlines > .line:not(.cleanchatline)').each(function() {
                 //$(this).delay(1000).fadeOut("slow");
+                // TODO : clean up all defaultchat lines 
+                // wich doesnt have defaultchat class added (yet)
+                // cleanthechat(chatline,chatlinetext)
+                if ($(this).hasClass('defaultchat')){
+                    // already cleaned up
+                } 
+                else {
+                    chatline = $(this).outerHTML;
+                    $(this).addClass('defaultchat');
+
+
+                    chatlinetext = $(this).find('text').text();
+
+
+                    chatline = cleanthechat(chatline,chatlinetext);
+
+
+                    $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
+                    
+                }
+                
+                
             });
             
             $("#cleanchatbtn").html('Dirty Chat');
@@ -185,9 +208,7 @@
     }   
     
     
-    var chatline = '';
-    var chatlinetext = '';
-    var newchatline = '';
+    
     SWAM.on ( 'chatLineAdded', function () {
         if (cleanchat == true) {
 
