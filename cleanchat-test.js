@@ -142,7 +142,7 @@
                         
                         replacewith = '🌈';
                     }
-                    else if (['pussy', 'cunt'].indexOf(value) >= 0){
+                    else if (['pussy', 'pussies', 'cunt', 'cunts'].indexOf(value) >= 0){
                         
                         replacewith = '🐱';
                     }
