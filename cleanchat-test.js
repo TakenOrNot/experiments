@@ -62,7 +62,7 @@
     
     
     function cleanthechat(chatline,chatlinetext){
-            console.log('CleantheChat :' + chatline + ' & text :' chatlinetext)
+            console.log('CleantheChat :' + chatline + ' & text :' + chatlinetext)
             window.chatline = chatline;
             var wordArray = chatlinetext.split(' ');
 
@@ -214,7 +214,7 @@
                     $(this).addClass('defaultchat');
                         
                     
-                    console.log(chatline + ' text :' chatlinetext)
+                    console.log(chatline + ' text :' + chatlinetext)
                     
                     chatline = cleanthechat(chatline,chatlinetext);
 
