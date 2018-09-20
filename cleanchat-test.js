@@ -62,9 +62,9 @@
     
     function cleanthechat(chatline,chatlinetext){
         
-            wordArray = chatlinetext.split(' ');
+            var wordArray = chatlinetext.split(' ');
 
-            cleanwordstr = '';
+            var cleanwordstr = '';
             function checker(value) {
                 var prohibited = ['asshole', 'bitch', 'cunt', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup', 'shut up', 'whore'];
 				
