@@ -35,70 +35,7 @@
         $('head').append ( cleanchatStyle );
     }
     
-    /* GUI */
     
-    $('#minimizechatcontainer').append ("<div id='cleanchatGUIcontainer' style='display: block;'><div id='cleanchatbtn' style='display: block; position: absolute; right: 150px; width: 80px; height: 15px; padding: 5px; background: rgba(0, 0, 0, 0.5); border-radius: 5px; text-align: center; color: #EEE; font-size: 10px; cursor: pointer;'>CleanChat</div></div>");
-
-    
-    
-    
-    
-    $("#cleanchatbtn").click(function (){
-        if (cleanchat == false) {
-            cleanchat = true;
-
-            // add a cleanchatmode class to #chatlines
-            $('#chatlines').addClass('cleanchatmode');
-            
-            $('#chatlines > .line:not(.cleanchatline)').each(function() {
-                //$(this).delay(1000).fadeOut("slow");
-                // TODO : clean up all defaultchat lines 
-                // wich doesnt have defaultchat class added (yet)
-                // cleanthechat(chatline,chatlinetext)
-                if ($(this).hasClass('defaultchat')){
-                    // already cleaned up
-                } 
-                else {
-                    chatline = $(this).outerHTML;
-                    $(this).addClass('defaultchat');
-
-
-                    chatlinetext = $(this).find('text').text();
-
-
-                    chatline = cleanthechat(chatline,chatlinetext);
-
-
-                    $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
-                    
-                }
-                
-                
-            });
-            
-            $("#cleanchatbtn").html('Dirty Chat');
-
-        }
-        else {
-            cleanchat = false;
-            
-            // remove cleanchatmode class to #chatlines
-            $('#chatlines').removeClass('cleanchatmode');
-            /*
-            $('#chatlines > .line').each(function( index ) {
-                $(this).delay(1000).fadeIn("slow");
-            });
-            */
-            $('#chatlines > .cleanchatline').css({display: "none"});
-            $('#chatlines > .line').not('.cleanchatline').each(function( index ) {
-                //$(this).delay(1000).fadeIn("slow");
-            });
-            
-            
-            
-            $("#cleanchatbtn").html('Clean Chat');
-        }
-    });
     
     $('#chatbox').mouseenter(function() {
         if (cleanchat == true) {
@@ -135,7 +72,7 @@
                 }).join('|'));
                 
                 if (!regex.test(value)){
-                    console.log("not test value " + value);
+                    // console.log("not test value " + value);
                     
                     if (value == "ass"){
                         var replacewith = '🍑';
@@ -146,8 +83,8 @@
                     }
                 }
                 else {
-                    console.log("test value " + value);
-                    //X mark : ❌
+                    // console.log("test value " + value);
+                    // X mark : ❌
                     // love letter : 💌
                     // sparkling heart : 💖
                     // hibiscus : 🌺
@@ -245,6 +182,69 @@
         }
         
     });   
+    
+    
+    /* GUI */
+    
+    $('#minimizechatcontainer').append ("<div id='cleanchatGUIcontainer' style='display: block;'><div id='cleanchatbtn' style='display: block; position: absolute; right: 150px; width: 80px; height: 15px; padding: 5px; background: rgba(0, 0, 0, 0.5); border-radius: 5px; text-align: center; color: #EEE; font-size: 10px; cursor: pointer;'>CleanChat</div></div>");
+
+    
+    $("#cleanchatbtn").click(function (){
+        if (cleanchat == false) {
+            cleanchat = true;
+
+            // add a cleanchatmode class to #chatlines
+            $('#chatlines').addClass('cleanchatmode');
+            
+            $('#chatlines > .line:not(.cleanchatline)').each(function() {
+                //$(this).delay(1000).fadeOut("slow");
+                // TODO : clean up all defaultchat lines 
+                // wich doesnt have defaultchat class added (yet)
+                // cleanthechat(chatline,chatlinetext)
+                if ($(this).hasClass('defaultchat')){
+                    // already cleaned up
+                } 
+                else {
+                    chatline = $(this).outerHTML;
+                    $(this).addClass('defaultchat');
+
+
+                    chatlinetext = $(this).find('text').text();
+
+
+                    chatline = cleanthechat(chatline,chatlinetext);
+
+
+                    $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
+                    
+                }
+                
+                
+            });
+            
+            $("#cleanchatbtn").html('Dirty Chat');
+
+        }
+        else {
+            cleanchat = false;
+            
+            // remove cleanchatmode class to #chatlines
+            $('#chatlines').removeClass('cleanchatmode');
+            /*
+            $('#chatlines > .line').each(function( index ) {
+                $(this).delay(1000).fadeIn("slow");
+            });
+            */
+            $('#chatlines > .cleanchatline').css({display: "none"});
+            $('#chatlines > .line').not('.cleanchatline').each(function( index ) {
+                //$(this).delay(1000).fadeIn("slow");
+            });
+            
+            
+            
+            $("#cleanchatbtn").html('Clean Chat');
+        }
+    });
      
     /* REGISTER */
 
