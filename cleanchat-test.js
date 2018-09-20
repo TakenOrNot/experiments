@@ -11,8 +11,7 @@
         //window.chatlinetext = '';
         window.cleanchatscrollbottom = false;
     }
-    window.chatline = '';
-    window.chatlinetext = '';
+
     function initEvents () {
         SWAM.on ( 'keydown', onKeydown );
 
@@ -63,7 +62,7 @@
     
     function cleanthechat(chatline,chatlinetext){
             console.log('CleantheChat :' + chatline + ' & text :' + chatlinetext)
-            window.chatline = chatline;
+            
             var wordArray = chatlinetext.split(' ');
 
             var cleanwordstr = '';
@@ -209,8 +208,8 @@
                     // already cleaned up
                 } 
                 else {
-                    var chatline = $(this).outerHTML;
-                    var chatlinetext = $(this).find('.text').text();
+                    chatline = $(this)[0].outerHTML;
+                    chatlinetext = $(this).find('.text').text();
                     $(this).addClass('defaultchat');
                         
                     
