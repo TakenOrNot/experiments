@@ -113,7 +113,14 @@
                 
                 if (!regex.test(value)){
                     console.log("not test value " + value);
-                    cleanwordstr = cleanwordstr + ' ' + value;
+                    
+                    if (value == "ass"){
+                        var replacewith = '🍑';
+                        cleanwordstr = cleanwordstr + ' ' + replacewith;
+                    }
+                    else {
+                        cleanwordstr = cleanwordstr + ' ' + value;
+                    }
                 }
                 else {
                     console.log("test value " + value);
