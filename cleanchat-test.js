@@ -28,7 +28,7 @@
         const cleanchatStyle = `
                     <style id='cleanchatStyle'>
                         
-                        
+                        .cleanchatline {display:none;}
                         .cleanchatmode .line:not(.cleanchatline) {display:none;}
                         .cleanchatmode .cleanchatline {display:block;}
                         
