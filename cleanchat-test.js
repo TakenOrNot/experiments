@@ -8,6 +8,9 @@
         initStyle ();
         window.cleanchat = false;
         window.cleanchatscrollbottom = false;
+        
+        window.chatline = '';
+        window.chatlinetext = '';
     }
 
     function initEvents () {
@@ -17,8 +20,8 @@
     
     SWAM.on ( 'gameLoaded', init );
     
-    var chatline = '';
-    var chatlinetext = '';
+    //var chatline = '';
+    //var chatlinetext = '';
     //var newchatline = '';
     
     function initStyle () {
@@ -64,7 +67,7 @@
 
             cleanwordstr = '';
             function checker(value) {
-                var prohibited = ['asshole', 'bitch', 'cunt', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup', 'whore'];
+                var prohibited = ['asshole', 'bitch', 'cunt', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup', 'shut up', 'whore'];
 				
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
@@ -121,7 +124,7 @@
                     else if (['bitch', 'bitches','whore'].indexOf(value) >= 0){
                        replacewith = '👿';
                     }
-                    else if (['stfu', 'shutup'].indexOf(value) >= 0){
+                    else if (['stfu', 'shutup', 'shut up'].indexOf(value) >= 0){
                         
                         replacewith = '🙊';
                     }
