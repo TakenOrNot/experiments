@@ -7,11 +7,12 @@
         console.log('init Language Plz');
         initStyle ();
         window.cleanchat = false;
-        window.chatline = '';
-        window.chatlinetext = '';
+        //window.chatline = '';
+        //window.chatlinetext = '';
         window.cleanchatscrollbottom = false;
     }
-
+    window.chatline = '';
+    window.chatlinetext = '';
     function initEvents () {
         SWAM.on ( 'keydown', onKeydown );
 
@@ -61,7 +62,7 @@
     
     
     function cleanthechat(chatline,chatlinetext){
-        
+            window.chatline = chatline;
             var wordArray = chatlinetext.split(' ');
 
             var cleanwordstr = '';
