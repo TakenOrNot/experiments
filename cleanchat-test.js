@@ -7,10 +7,9 @@
         console.log('init Language Plz');
         initStyle ();
         window.cleanchat = false;
-        window.cleanchatscrollbottom = false;
-        
         window.chatline = '';
         window.chatlinetext = '';
+        window.cleanchatscrollbottom = false;
     }
 
     function initEvents () {
@@ -208,14 +207,14 @@
                     // already cleaned up
                 } 
                 else {
-                    chatline = $(this).outerHTML;
+                    window.chatline = $(this).outerHTML;
                     $(this).addClass('defaultchat');
 
 
                     chatlinetext = $(this).find('.text').text();
 
 
-                    chatline = cleanthechat(chatline,chatlinetext);
+                    window.chatline = cleanthechat(chatline,chatlinetext);
 
 
                     $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
