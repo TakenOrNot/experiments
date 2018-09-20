@@ -238,10 +238,10 @@
                 $(this).delay(1000).fadeIn("slow");
             });
             */
-            $('#chatlines > .cleanchatline').css({display: "none"});
-            $('#chatlines > .line').not('.cleanchatline').each(function( index ) {
+            //$('#chatlines > .cleanchatline').css({display: "none"});
+            //$('#chatlines > .line').not('.cleanchatline').each(function( index ) {
                 //$(this).delay(1000).fadeIn("slow");
-            });
+            //});
             
             
             
