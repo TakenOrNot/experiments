@@ -77,6 +77,17 @@
         }
     });
     
+    $('#chatbox').mouseenter(function() {
+        if (cleanchat == true) {
+            window.cleanchatscrollbottom = false;
+        }
+    });
+    $('#chatbox').mouseleave(function() {
+         if (cleanchat == true) {   
+            window.cleanchatscrollbottom = true;
+         }
+    });
+    
     SWAM.on ( 'gamePrep', function () {
         if (cleanchat == true) {
             $('#chatlines > .line').each(function( index ) {
@@ -85,13 +96,15 @@
         }
     });
     
+    
+    
     function cleanthechat(chatline,chatlinetext){
         
             wordArray = chatlinetext.split(' ');
 
             cleanwordstr = '';
             function checker(value) {
-                var prohibited = ['asshole', 'bitch', 'cunt', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup'];
+                var prohibited = ['asshole', 'bitch', 'cunt', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup', 'whore'];
 				
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
@@ -133,8 +146,8 @@
                         
                         replacewith = '🐱';
                     }
-                    else if (['bitch', 'bitches'].indexOf(value) >= 0){
-                       replacewith = '🚺';
+                    else if (['bitch', 'bitches','whore'].indexOf(value) >= 0){
+                       replacewith = '👿';
                     }
                     else if (['stfu', 'shutup'].indexOf(value) >= 0){
                         
@@ -166,7 +179,16 @@
     SWAM.on ( 'chatLineAdded', function () {
         if (cleanchat == true) {
 
-            
+            function fancychatscrollbottomornot () {
+                
+                if (fancychatscrollbottom == true) {
+                    
+                    var chatbox    = $('#chatbox');
+                    var cbheight = chatbox[0].scrollHeight;
+                    chatbox.scrollTop(cbheight);
+                }
+                
+            }
             
             chatline = $('#chatlines > .line:last')[0].outerHTML;
             $('#chatlines > .line:last').addClass('defaultchat');
@@ -177,12 +199,16 @@
             
             chatline = cleanthechat(chatline,chatlinetext);
             
-            $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
             
-            var chatbox    = $('#chatbox');
-            var cbheight = chatbox[0].scrollHeight;
-            chatbox.scrollTop(cbheight);
-
+            $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
+            // TODO : add a num id and limit chatlines added
+            // or replace default chatline, and insert invisible divs for replaced words
+            // and display them when back to default chat mode
+            
+            // prevent scroll when chatbox is hovered
+            
+            fancychatscrollbottomornot();
+            
         }
         
     });   
