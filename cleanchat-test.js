@@ -209,7 +209,7 @@
                     $(this).addClass('defaultchat');
 
 
-                    chatlinetext = $(this).find('text').text();
+                    chatlinetext = $(this).find('.text').text();
 
 
                     chatline = cleanthechat(chatline,chatlinetext);
