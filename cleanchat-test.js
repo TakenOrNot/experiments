@@ -121,13 +121,18 @@
                     // love letter : 💌
                     // sparkling heart : 💖
                     // hibiscus : 🌺
-                    var replacewitharray = ['❌','💌','💖','🌺'];
-                    // var replacewith = '💌';
+                    // blossom : 🌼
+                    // sunflower : 🌻
+                    // bouquet : 💐
+                    // rose : 🌹
+                    // cherry blossow : 🌸
+                    var replacewitharray = ['❌','💌','💖','🌺','🌼','🌻','💐','🌹','🌸'];
+                    
                     
                     var replacewith = replacewitharray[Math.floor(Math.random()*replacewitharray.length)];
                     
-                    if (value == 'asshole') {
-                        replacewith = '🍑';
+                    if (['asshole', 'assholes'].indexOf(value) >= 0) {
+                        replacewith = '🌺';
                     }
                     if (value == 'shit') {
                         replacewith = '💩';
