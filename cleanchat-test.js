@@ -7,7 +7,7 @@
         console.log('init Language Plz');
         initStyle ();
         window.cleanchat = false;
-
+        window.cleanchatscrollbottom = false;
     }
 
     function initEvents () {
@@ -184,9 +184,9 @@
     SWAM.on ( 'chatLineAdded', function () {
         if (cleanchat == true) {
 
-            function fancychatscrollbottomornot () {
+            function cleanchatscrollbottomornot () {
                 
-                if (fancychatscrollbottom == true) {
+                if (cleanchatscrollbottom == true) {
                     
                     var chatbox    = $('#chatbox');
                     var cbheight = chatbox[0].scrollHeight;
@@ -212,7 +212,7 @@
             
             // prevent scroll when chatbox is hovered
             
-            fancychatscrollbottomornot();
+            cleanchatscrollbottomornot();
             
         }
         
