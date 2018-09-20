@@ -208,14 +208,12 @@
                     // already cleaned up
                 } 
                 else {
-                    window.chatline = $(this).outerHTML;
+                    var chatline = $(this).outerHTML;
                     $(this).addClass('defaultchat');
+                        
+                    var chatlinetext = $(this).find('.text').text();
 
-
-                    chatlinetext = $(this).find('.text').text();
-
-
-                    window.chatline = cleanthechat(chatline,chatlinetext);
+                    chatline = cleanthechat(chatline,chatlinetext);
 
 
                     $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
