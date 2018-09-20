@@ -178,7 +178,10 @@
             chatline = cleanthechat(chatline,chatlinetext);
             
             $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
-
+            
+            var chatbox    = $('#chatbox');
+            var cbheight = wtf[0].scrollHeight;
+            chatbox.scrollTop(cbheight);
 
         }
         
