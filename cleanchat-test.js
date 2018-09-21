@@ -166,8 +166,8 @@
             $('#chatlines > .line:last').addClass('defaultchat');
 
             chatlinetextelem = $('#chatlines > .line:last > .text');
-            //chatlinetextcontent = $('#chatlines > .line:last > .text').text();
-            chatlinetextcontent = chatlinetextelem.text();
+            chatlinetextcontent = $('#chatlines > .line:last > .text').text();
+            //chatlinetextcontent = chatlinetextelem.text();
             
             chatline = cleanthechat(chatline,chatlinetextelem,chatlinetextcontent);
             
