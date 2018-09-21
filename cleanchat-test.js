@@ -71,7 +71,7 @@
 				
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
-                    return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
+                    return s.replace(/[-/\\^$*+?.()|[\]{}]/gi, '\\$&')
                 }).join('|'));
                 
                 if (!regex.test(value)){
