@@ -78,7 +78,7 @@
                     return s.replace(/[-/\\^$*+?.()|[\]{}]/gi, '\\$&')
                 }).join('|'));
                 */
-                
+                // var index = 0;
                 // searching every prohibited word inside tested word
                 var tester = prohibited.map(function(s) {
                     console.log(word.toLowerCase().search(s));
@@ -89,8 +89,9 @@
                 
                 
                 if (tester.indexOf(0) >= 0){
-                
-                    console.log(word + " match a prohibited word !");
+                    
+                    
+                    console.log(word + " match a prohibited word ! i:" + tester.indexOf(0));
                     // X mark : ❌
                     // love letter : 💌
                     // sparkling heart : 💖
