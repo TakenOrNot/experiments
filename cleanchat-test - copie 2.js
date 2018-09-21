@@ -71,9 +71,7 @@
             // run checker on every word of the chatline
             function checker(word) {
                 
-                var prohibited = ['asshole', 'bitch', 'cunt', 'cock', 'dick', 'fag', 'fuck', 'pussy', 'moron', 'shit', 'stfu', 'shutup', 'shut up', 'whore'];
-                
-                var replacewitharray = ['🌺','👿','🐱','🍌','🍌','🌈','💖','🐱','👿','💩','🙊','🙊','🙊','👿'];
+                var prohibited = ['asshole', 'bitch', 'cunt', 'cock', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup', 'shut up', 'whore'];
 				/*
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
@@ -103,10 +101,38 @@
                     // bouquet : 💐
                     // rose : 🌹
                     // cherry blossow : 🌸
-                   
-                    var replacewith = replacewitharray[tester.indexOf(0)];
+                    var replacewitharray = ['❌','💌','💖','🌺','🌼','🌻','💐','🌹','🌸'];
                     
                     
+                    var replacewith = replacewitharray[Math.floor(Math.random()*replacewitharray.length)];
+                    
+                    if (['asshole', 'assholes'].indexOf(word) >= 0) {
+                        replacewith = '🌺';
+                    }
+                    if (word == 'shit') {
+                        replacewith = '💩';
+                    }
+                    else if (word == 'bullshit'){
+                        replacewith = '🐮💩';
+                    }
+                    else if (['cock', 'dick'].indexOf(word) >= 0){
+                        replacewith = '🍌';
+                    }
+                    else if (['fag', 'faggot', 'faggots'].indexOf(word) >= 0){
+                        
+                        replacewith = '🌈';
+                    }
+                    else if (['pussy', 'pussies', 'cunt', 'cunts'].indexOf(word) >= 0){
+                        
+                        replacewith = '🐱';
+                    }
+                    else if (['bitch', 'bitches','whore'].indexOf(word) >= 0){
+                       replacewith = '👿';
+                    }
+                    else if (['stfu', 'shutup', 'shut up'].indexOf(word) >= 0){
+                        
+                        replacewith = '🙊';
+                    }
                     
                 
                     cleanwordstr = cleanwordstr + ' ' + replacewith;
