@@ -66,7 +66,10 @@
             var wordArray = chatlinetext.split(' ');
 
             var cleanwordstr = '';
-            function checker(value) {
+        
+            // run checker on every word of the chatline
+            function checker(word) {
+                
                 var prohibited = ['asshole', 'bitch', 'cunt', 'cock', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup', 'shut up', 'whore'];
 				/*
                 var regex = new RegExp(prohibited.map(function(s) {
@@ -75,27 +78,28 @@
                 }).join('|'));
                 */
                 
-                //var regex = new RegExp(prohibited.map(function(s) {
-                    //return s.replace(/\b$s?\b/giu, '\\$&');
-                    //return s.replace(/[-/\\^$*+?.()|[\]{}]/giu, '\\$&');
-                    //return value.toLowerCase().indexOf(s);
-                //}).join('|'));
+                // searching every prohibited word inside tested word
                 var tester = prohibited.map(function(s) {
-                    console.log(value.toLowerCase().search(s));
-                    var testresult = value.toLowerCase().search(s);
-                if (testresult == -1){
-                    console.log("not test value " + value);
+                    console.log(word.toLowerCase().search(s));
                     
-                    if (value == "ass"){
+                    var testresult = word.toLowerCase().search(s);
+                    return testresult
+                }); 
+                
+                
+                if (tester.search(-1)){
+                    console.log(word + " doesnt match any prohibited word");
+                    
+                    if (word == "ass"){
                         var replacewith = '🍑';
                         cleanwordstr = cleanwordstr + ' ' + replacewith;
                     }
                     else {
-                        cleanwordstr = cleanwordstr + ' ' + value;
+                        cleanwordstr = cleanwordstr + ' ' + word;
                     }
                 }
                 else {
-                    console.log("test value " + value);
+                    console.log(word + " match a prohibited word !");
                     // X mark : ❌
                     // love letter : 💌
                     // sparkling heart : 💖
@@ -110,43 +114,43 @@
                     
                     var replacewith = replacewitharray[Math.floor(Math.random()*replacewitharray.length)];
                     
-                    if (['asshole', 'assholes'].indexOf(value) >= 0) {
+                    if (['asshole', 'assholes'].indexOf(word) >= 0) {
                         replacewith = '🌺';
                     }
-                    if (value == 'shit') {
+                    if (word == 'shit') {
                         replacewith = '💩';
                     }
-                    else if (value == 'bullshit'){
+                    else if (word == 'bullshit'){
                         replacewith = '🐮💩';
                     }
-                    else if (['cock', 'dick'].indexOf(value) >= 0){
+                    else if (['cock', 'dick'].indexOf(word) >= 0){
                         replacewith = '🍌';
                     }
-                    else if (['fag', 'faggot', 'faggots'].indexOf(value) >= 0){
+                    else if (['fag', 'faggot', 'faggots'].indexOf(word) >= 0){
                         
                         replacewith = '🌈';
                     }
-                    else if (['pussy', 'pussies', 'cunt', 'cunts'].indexOf(value) >= 0){
+                    else if (['pussy', 'pussies', 'cunt', 'cunts'].indexOf(word) >= 0){
                         
                         replacewith = '🐱';
                     }
-                    else if (['bitch', 'bitches','whore'].indexOf(value) >= 0){
+                    else if (['bitch', 'bitches','whore'].indexOf(word) >= 0){
                        replacewith = '👿';
                     }
-                    else if (['stfu', 'shutup', 'shut up'].indexOf(value) >= 0){
+                    else if (['stfu', 'shutup', 'shut up'].indexOf(word) >= 0){
                         
                         replacewith = '🙊';
                     }
                     
                 
                     cleanwordstr = cleanwordstr + ' ' + replacewith;
-                }}); 
-                    
-                //if (!regex.test(value)){
+                }
+                
+                //if (!regex.test(word)){
                 
                 
                 return cleanwordstr;
-                //return !regex.test(value);
+                //return !regex.test(word);
             }
             
 	
