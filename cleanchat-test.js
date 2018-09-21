@@ -67,7 +67,7 @@
 
             var cleanwordstr = '';
             function checker(value) {
-                var prohibited = ['asshole', 'bitch', 'cunt', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup', 'shut up', 'whore'];
+                var prohibited = ['asshole', 'bitch', 'cunt', 'cock', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup', 'shut up', 'whore'];
 				
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
@@ -110,7 +110,7 @@
                     else if (value == 'bullshit'){
                         replacewith = '🐮💩';
                     }
-                    else if (value == 'dick'){
+                    else if (['cock', 'dick'].indexOf(value) >= 0){
                         replacewith = '🍌';
                     }
                     else if (['fag', 'faggot', 'faggots'].indexOf(value) >= 0){
@@ -231,7 +231,7 @@
         else {
             cleanchat = false;
             
-            // remove cleanchatmode class to #chatlines
+            // remove cleanchatmode class from #chatlines
             $('#chatlines').removeClass('cleanchatmode');
             /*
             $('#chatlines > .line').each(function( index ) {
