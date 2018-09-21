@@ -65,6 +65,7 @@
             
             var wordArray = chatlinetext.split(' ');
 
+            
             var cleanwordstr = '';
         
             // run checker on every word of the chatline
@@ -87,18 +88,8 @@
                 }); 
                 
                 
-                if (tester.search(-1)){
-                    console.log(word + " doesnt match any prohibited word");
-                    
-                    if (word == "ass"){
-                        var replacewith = '🍑';
-                        cleanwordstr = cleanwordstr + ' ' + replacewith;
-                    }
-                    else {
-                        cleanwordstr = cleanwordstr + ' ' + word;
-                    }
-                }
-                else {
+                if (tester.indexOf(0) >= 0){
+                
                     console.log(word + " match a prohibited word !");
                     // X mark : ❌
                     // love letter : 💌
@@ -144,6 +135,19 @@
                     
                 
                     cleanwordstr = cleanwordstr + ' ' + replacewith;
+                }
+                else {
+                    console.log(word + " doesnt match any prohibited word");
+                    
+                    if (word == "ass"){
+                        var replacewith = '🍑';
+                        cleanwordstr = cleanwordstr + ' ' + replacewith;
+                    }
+                    else {
+                        cleanwordstr = cleanwordstr + ' ' + word;
+                    }
+                
+                    
                 }
                 
                 //if (!regex.test(word)){
