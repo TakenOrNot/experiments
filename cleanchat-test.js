@@ -87,7 +87,7 @@
                 }); 
                     
                 //if (!regex.test(value)){
-                if (!tester){
+                if (tester !== 2){
                     // console.log("not test value " + value);
                     
                     if (value == "ass"){
