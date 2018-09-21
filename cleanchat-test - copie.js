@@ -68,23 +68,18 @@
             var cleanwordstr = '';
             function checker(value) {
                 var prohibited = ['asshole', 'bitch', 'cunt', 'cock', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup', 'shut up', 'whore'];
-				/*
+				
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
                     return s.replace(/[-/\\^$*+?.()|[\]{}]/gi, '\\$&')
                 }).join('|'));
-                */
                 
-                //var regex = new RegExp(prohibited.map(function(s) {
-                    //return s.replace(/\b$s?\b/giu, '\\$&');
-                    //return s.replace(/[-/\\^$*+?.()|[\]{}]/giu, '\\$&');
-                    //return value.toLowerCase().indexOf(s);
-                //}).join('|'));
-                var tester = prohibited.map(function(s) {
-                    console.log(value.toLowerCase().search(s));
-                    var testresult = value.toLowerCase().search(s);
-                if (testresult == -1){
-                    console.log("not test value " + value);
+                
+                
+                    
+                if (!regex.test(value)){
+                
+                    // console.log("not test value " + value);
                     
                     if (value == "ass"){
                         var replacewith = '🍑';
@@ -95,7 +90,7 @@
                     }
                 }
                 else {
-                    console.log("test value " + value);
+                    // console.log("test value " + value);
                     // X mark : ❌
                     // love letter : 💌
                     // sparkling heart : 💖
@@ -140,10 +135,7 @@
                     
                 
                     cleanwordstr = cleanwordstr + ' ' + replacewith;
-                }}); 
-                    
-                //if (!regex.test(value)){
-                
+                }
                 
                 return cleanwordstr;
                 //return !regex.test(value);
