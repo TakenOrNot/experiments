@@ -8,7 +8,7 @@
         initStyle ();
         window.cleanchat = false;
         //window.chatline = '';
-        //window.chatlinetextcontent = '';
+        //window.chatlinetext = '';
         window.cleanchatscrollbottom = false;
     }
 
@@ -20,7 +20,7 @@
     SWAM.on ( 'gameLoaded', init );
     
     //var chatline = '';
-    //var chatlinetextcontent = '';
+    //var chatlinetext = '';
     //var newchatline = '';
     
     function initStyle () {
@@ -60,10 +60,10 @@
     
     
     
-    function cleanthechat(chatline,chatlinetextcontent){
-            console.log('CleantheChat :' + chatline + ' & text :' + chatlinetextcontent)
+    function cleanthechat(chatline,chatlinetext){
+            console.log('CleantheChat :' + chatline + ' & text :' + chatlinetext)
             
-            var wordArray = chatlinetextcontent.split(' ');
+            var wordArray = chatlinetext.split(' ');
 
             
             var cleanwordstr = '';
@@ -138,12 +138,11 @@
             wordArray = wordArray.filter(checker);
  
             // TODO : parse chatline to replace only inside text div
-            // chatlinetextelem.text(cleanwordstr);
-            chatline = chatline.replace(chatlinetextcontent,cleanwordstr);
+            //chatline = chatline.replace(chatlinetext,cleanwordstr);
             
-        
+            chatline = chatline.replace(chatlinetext,cleanwordstr);
+            
             return chatline
-            
     }   
     
     
@@ -165,12 +164,11 @@
             chatline = $('#chatlines > .line:last')[0].outerHTML;
             $('#chatlines > .line:last').addClass('defaultchat');
 
-            chatlinetextelem = $('#chatlines > .line:last > .text');
-            //chatlinetextcontent = $('#chatlines > .line:last > .text').text();
-            chatlinetextcontent = chatlinetextelem.text();
             
-            chatline = cleanthechat(chatline,chatlinetextelem,chatlinetextcontent);
+            chatlinetext = $('#chatlines > .line:last > .text').text();
             
+            
+            chatline = cleanthechat(chatline,chatlinetext);
             
             
             $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
@@ -203,19 +201,19 @@
                 //$(this).delay(1000).fadeOut("slow");
                 // TODO : clean up all defaultchat lines 
                 // wich doesnt have defaultchat class added (yet)
-                // cleanthechat(chatline,chatlinetextcontent)
+                // cleanthechat(chatline,chatlinetext)
                 if ($(this).hasClass('defaultchat')){
                     // already cleaned up
                 } 
                 else {
                     chatline = $(this)[0].outerHTML;
-                    chatlinetextcontent = $(this).find('.text').text();
+                    chatlinetext = $(this).find('.text').text();
                     $(this).addClass('defaultchat');
                         
                     
-                    console.log(chatline + ' text :' + chatlinetextcontent)
+                    console.log(chatline + ' text :' + chatlinetext)
                     
-                    chatline = cleanthechat(chatline,chatlinetextcontent);
+                    chatline = cleanthechat(chatline,chatlinetext);
 
 
                     $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
