@@ -71,9 +71,9 @@
             // run checker on every word of the chatline
             function checker(word) {
                 
-                var prohibited = ['asshole', 'bitch', 'cunt', 'cock', 'dick', 'fag', 'fuck', 'f*ck', 'pussy', 'moron', 'shit', 'stfu', 'shutup', 'shut up', 'whore'];
+                var prohibited = ['asshole', 'bitch', 'cunt', 'cock', 'dick', 'fag', 'fuck', 'f*ck', 'wtf', 'motherfucker', 'pussy', 'moron', 'shit', 'stfu', 'shutup', 'shut up', 'whore'];
                 
-                var replacewitharray = ['🌺','👿','🐱','🍌','🍌','🌈','💖','💖','🐱','👿','💩','🙊','🙊','🙊','👿'];
+                var replacewitharray = ['🌺','👿','🐱','🍌','🍌','🌈','💖','💖','💖','👿','🐱','👿','💩','🙊','🙊','🙊','👿'];
 				/*
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
