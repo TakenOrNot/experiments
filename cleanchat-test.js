@@ -68,12 +68,17 @@
             var cleanwordstr = '';
             function checker(value) {
                 var prohibited = ['asshole', 'bitch', 'cunt', 'cock', 'dick', 'fag', 'fuck', 'fucker', 'pussy', 'fuckoff', 'moron', 'shit', 'stfu', 'shutup', 'shut up', 'whore'];
-				
+				/*
                 var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
                     return s.replace(/[-/\\^$*+?.()|[\]{}]/gi, '\\$&')
                 }).join('|'));
+                */
                 
+                var regex = new RegExp(prohibited.map(function(s) {
+                    return s.findall(/\b$s?\b/giu)
+                }).join('|'));
+                    
                 if (!regex.test(value)){
                     // console.log("not test value " + value);
                     
