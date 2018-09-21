@@ -169,7 +169,7 @@
             chatlinetextcontent = $('#chatlines > .line:last > .text').text();
             //chatlinetextcontent = chatlinetextelem.text();
             
-            chatline = cleanthechat(chatline,chatlinetextelem,chatlinetextcontent);
+            chatline = cleanthechat(chatline,chatlinetextcontent);
             
             
             
