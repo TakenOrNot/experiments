@@ -75,12 +75,19 @@
                 }).join('|'));
                 */
                 
-                var regex = new RegExp(prohibited.map(function(s) {
+                //var regex = new RegExp(prohibited.map(function(s) {
                     //return s.replace(/\b$s?\b/giu, '\\$&');
-                    return s.replace(/[-/\\^$*+?.()|[\]{}]/giu, '\\$&');
-                }).join('|'));
+                    //return s.replace(/[-/\\^$*+?.()|[\]{}]/giu, '\\$&');
+                    //return value.toLowerCase().indexOf(s);
+                //}).join('|'));
+                var tester = prohibited.map(function(s) {
+                    //return s.replace(/\b$s?\b/giu, '\\$&');
+                    //return s.replace(/[-/\\^$*+?.()|[\]{}]/giu, '\\$&');
+                    return value.toLowerCase().search(s);
+                }); 
                     
-                if (!regex.test(value)){
+                //if (!regex.test(value)){
+                if (!tester){
                     // console.log("not test value " + value);
                     
                     if (value == "ass"){
