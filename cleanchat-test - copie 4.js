@@ -23,24 +23,15 @@
     //var chatlinetextcontent = '';
     //var newchatline = '';
     
-    
-    /* .cleanchatline {display:none;}
-                        .cleanchatmode .line:not(.cleanchatline) {display:none;}
-                        .cleanchatmode .cleanchatline {display:block;}
-                        */
-    
-    
     function initStyle () {
 
         const cleanchatStyle = `
                     <style id='cleanchatStyle'>
                         
+                        .cleanchatline {display:none;}
+                        .cleanchatmode .line:not(.cleanchatline) {display:none;}
+                        .cleanchatmode .cleanchatline {display:block;}
                         
-                        
-                        .replacedword {display:inline-block;}
-                        .cleanchatmode .replacedword {display:none;}
-                        .cleanchatmode .replacedby {display:inline-block;}
-                    
                     </style>
                 `
         $('head').append ( cleanchatStyle );
@@ -113,7 +104,7 @@
                     // rose : 🌹
                     // cherry blossow : 🌸
                    
-                    var replacewith = "<div class='replacedword'>" + word + "</div><div class='replacedby'>" + replacewitharray[tester.indexOf(0)] + "</div>";
+                    var replacewith = replacewitharray[tester.indexOf(0)];
                     
                     
                     
@@ -122,7 +113,7 @@
                 }
                 else {
                     console.log(word + " doesnt match any prohibited word");
-                    /*
+                    
                     if (word == "ass"){
                         var replacewith = '🍑';
                         cleanwordstr = cleanwordstr + ' ' + replacewith;
@@ -130,8 +121,8 @@
                     else {
                         cleanwordstr = cleanwordstr + ' ' + word;
                     }
-                    */
-                    cleanwordstr = cleanwordstr + ' ' + word;
+                
+                    
                 }
                 
                 //if (!regex.test(word)){
@@ -148,11 +139,11 @@
  
             // TODO : parse chatline to replace only inside text div
             // chatlinetextelem.text(cleanwordstr);
-            //chatline = chatline.replace(chatlinetextcontent,cleanwordstr);
-            chatlinecleantextcontent = cleanwordstr;
+            chatline = chatline.replace(chatlinetextcontent,cleanwordstr);
+            
         
-            //return chatline
-            return chatlinecleantextcontent
+            return chatline
+            
     }   
     
     
@@ -176,15 +167,13 @@
 
             chatlinetextelem = $('#chatlines > .line:last > .text');
             chatlinetextcontent = $('#chatlines > .line:last > .text').text();
+            //chatlinetextcontent = chatlinetextelem.text();
+            
+            chatline = cleanthechat(chatline,chatlinetextcontent);
             
             
-            //chatline = cleanthechat(chatline,chatlinetextcontent);
-            chatlinecleantextcontent = cleanthechat(chatline,chatlinetextcontent);
             
-            
-            //$(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
-            $('#chatlines > .line:last > .text').html(chatlinecleantextcontent);
-            $('#chatlines > .line:last').addClass('cleanchatline');
+            $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
             // TODO : add a num id and limit chatlines added
             // or replace default chatline, and insert invisible divs for replaced words
             // and display them when back to default chat mode
@@ -215,24 +204,22 @@
                 // TODO : clean up all defaultchat lines 
                 // wich doesnt have defaultchat class added (yet)
                 // cleanthechat(chatline,chatlinetextcontent)
-                //if ($(this).hasClass('defaultchat')){
-                if ($(this).hasClass('cleanchatline')){
+                if ($(this).hasClass('defaultchat')){
                     // already cleaned up
                 } 
                 else {
                     chatline = $(this)[0].outerHTML;
                     chatlinetextcontent = $(this).find('.text').text();
-                    //$(this).addClass('defaultchat');
+                    $(this).addClass('defaultchat');
                         
                     
                     console.log(chatline + ' text :' + chatlinetextcontent)
                     
-                    //chatline = cleanthechat(chatline,chatlinetextcontent);
-                    chatlinecleantextcontent = cleanthechat(chatline,chatlinetextcontent);    
+                    chatline = cleanthechat(chatline,chatlinetextcontent);
 
-                    //$(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
-                    $(this).find('.text').html(chatlinecleantextcontent);
-                    $(this).addClass('cleanchatline');             
+
+                    $(chatline).insertAfter( "#chatlines > .line:last" ).addClass('cleanchatline');
+                    
                 }
                 
                 
