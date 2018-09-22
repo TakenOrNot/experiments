@@ -172,7 +172,7 @@
             }
             
             chatline = $('#chatlines > .line:last')[0].outerHTML;
-            $('#chatlines > .line:last').addClass('defaultchat');
+            //$('#chatlines > .line:last').addClass('defaultchat');
 
             chatlinetextelem = $('#chatlines > .line:last > .text');
             chatlinetextcontent = $('#chatlines > .line:last > .text').text();
