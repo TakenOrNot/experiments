@@ -36,7 +36,7 @@
                     <style id='cleanchatStyle'>
                         
                         
-                        
+                        .replacedby {display:none;}
                         .replacedword {display:inline-block;}
                         .cleanchatmode .replacedword {display:none;}
                         .cleanchatmode .replacedby {display:inline-block;}
