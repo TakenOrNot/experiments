@@ -89,7 +89,7 @@
                 if (carriername.length > 0){
                     if (!window.checkblueflag){
                         window.checkblueflag = true;
-                        checkblueflaginterval = window.setInterval(checkcarry(carriername,team), 1000);
+                        var checkblueflaginterval = setInterval(checkcarry(carriername,team), 1000);
 
                     }
                 }
@@ -100,7 +100,7 @@
                 if (carriername.length > 0){ 
                     if (!window.checkredflag){
                         window.checkredflag = true;
-                        checkredflaginterval = window.setInterval(checkcarry(carriername,team), 1000);
+                        var checkredflaginterval = setInterval(checkcarry(carriername,team), 1000);
 
                     }
                 }
@@ -137,7 +137,7 @@
                     else {
                         console.log("noone carrying red flag");
                         $('#redflagcarrierinfo').html('');
-                        window.clearInterval(checkredflaginterval);
+                        clearInterval(checkredflaginterval);
                     }
                     
                 }
@@ -159,7 +159,7 @@
                         console.log("noone carrying blue flag");
                         $('#blueflagcarrierinfo').html('');
                         
-                        window.clearInterval(checkblueflaginterval);
+                        clearInterval(checkblueflaginterval);
                     }
                 }
             }
