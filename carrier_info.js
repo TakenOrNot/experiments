@@ -77,7 +77,37 @@
     });
     
     
-    // check if still beeing carried (no drop event...)
+    
+    
+    var carriername = '';
+    function onFlagEvent ( event, team, verb ) {
+        
+            console.log('FLAG EVENT : ' + team + ' ' + verb);
+        
+            if ( team == 1) {
+                carriername = $( "#blueflag-name" ).justtext();
+                if (carriername.length > 0){
+                    if (!window.checkblueflag){
+                        window.checkblueflag = true;
+                        checkblueflaginterval = window.setInterval(checkcarry(carriername,team), 1000);
+
+                    }
+                }
+            }
+            else if ( team == 2){
+                carriername = $( "#redflag-name" ).justtext();
+                
+                if (carriername.length > 0){ 
+                    if (!window.checkredflag){
+                        window.checkredflag = true;
+                        checkredflaginterval = window.setInterval(checkcarry(carriername,team), 1000);
+
+                    }
+                }
+                
+            }
+        
+            // check if still beeing carried (no drop event...)
             
             function checkcarry(carriername, team){
                 if (carriername.length > 0){ 
@@ -132,34 +162,6 @@
                         window.clearInterval(checkblueflaginterval);
                     }
                 }
-            }
-    
-    var carriername = '';
-    function onFlagEvent ( event, team, verb ) {
-        
-            console.log('FLAG EVENT : ' + team + ' ' + verb);
-        
-            if ( team == 1) {
-                carriername = $( "#blueflag-name" ).justtext();
-                if (carriername.length > 0){
-                    if (!window.checkblueflag){
-                        window.checkblueflag = true;
-                        checkblueflaginterval = window.setInterval(checkcarry(carriername,team), 1000);
-
-                    }
-                }
-            }
-            else if ( team == 2){
-                carriername = $( "#redflag-name" ).justtext();
-                
-                if (carriername.length > 0){ 
-                    if (!window.checkredflag){
-                        window.checkredflag = true;
-                        checkredflaginterval = window.setInterval(checkcarry(carriername,team), 1000);
-
-                    }
-                }
-                
             }
                 
                 
