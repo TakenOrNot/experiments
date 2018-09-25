@@ -7,8 +7,8 @@
         console.log('init FancyChat');
         initStyle ();
         initEvents ();
-        window.checkblueflag = false;
-        window.checkredflag = false;
+        window.checkblueflag = '';
+        window.checkredflag = '';
     }
 
     function initEvents () {
