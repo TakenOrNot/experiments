@@ -76,38 +76,6 @@
         
     });
     
-    var carriername = '';
-    function onFlagEvent ( event, team, verb ) {
-        
-            console.log('FLAG EVENT : ' + team + ' ' + verb);
-        
-            if ( team == 1) {
-                carriername = $( "#blueflag-name" ).justtext();
-                if (carriername.length > 0){
-                    if (!window.checkblueflag){
-                        window.checkblueflag = true;
-                        var checkblueflaginterval = setInterval(checkcarry(carriername,2), 1000);
-
-                    }
-                }
-            }
-            else if ( team == 2){
-                carriername = $( "#redflag-name" ).justtext();
-                
-                if (carriername.length > 0){ 
-                    if (!window.checkredflag){
-                        window.checkredflag = true;
-                        var checkredflaginterval = setInterval(checkcarry(carriername,1), 1000);
-
-                    }
-                }
-                
-            }
-                
-                
-            
-    };
-    
     
     // check if still beeing carried (no drop event...)
             
@@ -165,6 +133,41 @@
                     }
                 }
             }
+    
+    var carriername = '';
+    function onFlagEvent ( event, team, verb ) {
+        
+            console.log('FLAG EVENT : ' + team + ' ' + verb);
+        
+            if ( team == 1) {
+                carriername = $( "#blueflag-name" ).justtext();
+                if (carriername.length > 0){
+                    if (!window.checkblueflag){
+                        window.checkblueflag = true;
+                        var checkblueflaginterval = setInterval(checkcarry(carriername,2), 1000);
+
+                    }
+                }
+            }
+            else if ( team == 2){
+                carriername = $( "#redflag-name" ).justtext();
+                
+                if (carriername.length > 0){ 
+                    if (!window.checkredflag){
+                        window.checkredflag = true;
+                        var checkredflaginterval = setInterval(checkcarry(carriername,1), 1000);
+
+                    }
+                }
+                
+            }
+                
+                
+            
+    };
+    
+    
+    
     
     
     
