@@ -94,6 +94,7 @@
                 var carrierobj = Players.getByName(carriername); 
                 var carrierid = carrierobj['id'];
                 var carrierteam = carrierobj['team'];
+                var carriership = Players.get(carrierid).type;
             }
             
             
@@ -106,12 +107,13 @@
                     if (carriername.length > 0){ 
                         carrierobj = Players.getByName(carriername); 
                         carrierid = carrierobj['id'];
-                        $('#redflagcarrierinfo').html();
+                        carriership = Players.get(carrierid).type;
                         
                         
-                        $('#redflagcarrierinfo').html(Players.get(carrierid).health);    $('#redflagcarrierinfo').css(shipstylearray[Players.get(carrierid).type]);
+                        
+                        $('#redflagcarrierinfo').html(Players.get(carrierid).health);    $('#redflagcarrierinfo').css(shipstylearray[carriership]);
                         //console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
-                        console.log(shipstylearray[Players.get(carrierid).type]);
+                        console.log(shipstylearray[carriership]);
                     }
                     else {
                         console.log("noone carrying red flag");
@@ -126,10 +128,11 @@
                     if (carriername.length > 0){ 
                         carrierobj = Players.getByName(carriername); 
                         carrierid = carrierobj['id'];
+                        carriership = Players.get(carrierid).type;
                         
-                        $('#blueflagcarrierinfo').html(Players.get(carrierid).health); $('#blueflagcarrierinfo').css(shipstylearray[Players.get(carrierid).type]);
+                        $('#blueflagcarrierinfo').html(Players.get(carrierid).health); $('#blueflagcarrierinfo').css(shipstylearray[carriership]);
                         //console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
-                        console.log(shipstylearray[Players.get(carrierid).type]);
+                        console.log(shipstylearray[carriership]);
                     }
                     else {
                         console.log("noone carrying blue flag");
