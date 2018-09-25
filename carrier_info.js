@@ -79,9 +79,9 @@
     var carriername = '';
     function onFlagEvent ( event, team, verb ) {
         
-            
+            console.log('FLAG EVENT : ' + team + ' ' + verb);
         
-            if ( team === 1) {
+            if ( team == 1) {
                 carriername = $( "#redflag-name" ).justtext();
                 if (carriername.length > 0){
                     if (!window.checkredflag){
@@ -91,7 +91,7 @@
                     }
                 }
             }
-            else if ( team === 2){
+            else if ( team == 2){
                 carriername = $( "#blueflag-name" ).justtext();
                 
                 if (carriername.length > 0){ 
@@ -101,6 +101,7 @@
 
                     }
                 }
+                
             }
                 
                 
