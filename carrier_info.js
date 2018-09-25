@@ -4,7 +4,7 @@
 !function () {
     /* INIT */
     function init () {
-        console.log('init FancyChat');
+        console.log('init CarrierInfo');
         initStyle ();
         initEvents ();
         window.checkblueflag = '';
@@ -107,7 +107,7 @@
                     else {
                         console.log("noone carrying red flag");
                         $('#redflagcarrierinfo').html('');
-                        clearInterval(window.checkredflaginterval);
+                        window.clearInterval(checkredflaginterval);
                     }
                     
                 }
@@ -129,7 +129,7 @@
                         console.log("noone carrying blue flag");
                         $('#blueflagcarrierinfo').html('');
                         
-                        clearInterval(window.checkblueflaginterval);
+                        window.clearInterval(checkblueflaginterval);
                     }
                 }
             }
@@ -144,7 +144,7 @@
                 if (carriername.length > 0){
                     if (!window.checkblueflag){
                         window.checkblueflag = true;
-                        window.checkblueflaginterval = setInterval(checkcarry(carriername,2), 1000);
+                        checkblueflaginterval = window.setInterval(checkcarry(carriername,2), 1000);
 
                     }
                 }
@@ -155,7 +155,7 @@
                 if (carriername.length > 0){ 
                     if (!window.checkredflag){
                         window.checkredflag = true;
-                        window.checkredflaginterval = setInterval(checkcarry(carriername,1), 1000);
+                        checkredflaginterval = window.setInterval(checkcarry(carriername,1), 1000);
 
                     }
                 }
