@@ -107,7 +107,7 @@
                     else {
                         console.log("noone carrying red flag");
                         $('#redflagcarrierinfo').html('');
-                        clearInterval(checkredflaginterval);
+                        clearInterval(window.checkredflaginterval);
                     }
                     
                 }
@@ -129,7 +129,7 @@
                         console.log("noone carrying blue flag");
                         $('#blueflagcarrierinfo').html('');
                         
-                        clearInterval(checkblueflaginterval);
+                        clearInterval(window.checkblueflaginterval);
                     }
                 }
             }
@@ -144,7 +144,7 @@
                 if (carriername.length > 0){
                     if (!window.checkblueflag){
                         window.checkblueflag = true;
-                        var checkblueflaginterval = setInterval(checkcarry(carriername,2), 1000);
+                        window.checkblueflaginterval = setInterval(checkcarry(carriername,2), 1000);
 
                     }
                 }
@@ -155,7 +155,7 @@
                 if (carriername.length > 0){ 
                     if (!window.checkredflag){
                         window.checkredflag = true;
-                        var checkredflaginterval = setInterval(checkcarry(carriername,1), 1000);
+                        window.checkredflaginterval = setInterval(checkcarry(carriername,1), 1000);
 
                     }
                 }
