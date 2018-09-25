@@ -74,10 +74,10 @@
         
     });
     
-    
+    var carriername = '';
     function onFlagEvent ( event, team, verb ) {
         
-            var carriername = '';
+            
         
             if ( team === 1) {
                 carriername = $( "#redflag-name" ).justtext();
