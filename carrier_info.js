@@ -42,9 +42,31 @@
     
     /* GUI */
     
+    $('#gamespecific').insertBefore("<div id='blueflagcarrierinfo' style='position: absolute;left: 33%; top: 1em;color: white;height: 35px;width: 100px;text-align: right;'></div>");
     
-
+    $('#gamespecific').insertAfter("<div id='redflagcarrierinfo' style='position: absolute;right: 33%; top: 1em;color: white;height: 35px;width: 100px;'></div>");
     
+    let ship1 = document.querySelector('#sidebar #selectaircraft-1');
+    let ship1compStyles = window.getComputedStyle(ship1);
+    var ship1bg = ship1compStyles.getPropertyValue('background');
+    
+    let ship2 = document.querySelector('#sidebar #selectaircraft-2');
+    let ship2compStyles = window.getComputedStyle(ship2);
+    var ship2bg = ship2compStyles.getPropertyValue('background');
+    
+    let ship3 = document.querySelector('#sidebar #selectaircraft-3');
+    let ship3compStyles = window.getComputedStyle(ship3);
+    var ship3bg = ship3compStyles.getPropertyValue('background');
+    
+    let ship4 = document.querySelector('#sidebar #selectaircraft-4');
+    let ship4compStyles = window.getComputedStyle(ship4);
+    var ship4bg = ship4compStyles.getPropertyValue('background');
+    
+    let ship5 = document.querySelector('#sidebar #selectaircraft-5');
+    let ship5compStyles = window.getComputedStyle(ship5);
+    var ship5bg = ship5compStyles.getPropertyValue('background');
+    
+    shipstylearray = [ship1bg, ship2bg, ship3bg, ship4bg, ship5bg]
     
     
     SWAM.on ( 'gamePrep', function () {
@@ -63,8 +85,7 @@
                 carriername = $( "#blueflag-name" ).justtext();
             }
                 
-                #sidebar #selectaircraft-1 {
-    background-size: 70%;
+                
             
     
             if (carriername.length > 0){ 
@@ -84,11 +105,15 @@
                     if (carriername.length > 0){ 
                         carrierobj = Players.getByName(carriername); 
                         carrierid = carrierobj['id'];
+                        $('#redflagcarrierinfo').html();
                         
-                        console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
+                        
+                        $('#redflagcarrierinfo').html(Players.get(carrierid).health);    $('#redflagcarrierinfo').css(shipstylearray[Players.get(carrierid).type]);
+                        //console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
                     }
                     else {
                         console.log("noone carrying red flag");
+                        $('#redflagcarrierinfo').html();
                         clearInterval(checkcarryinterval);
                     }
                     
@@ -100,12 +125,12 @@
                         carrierobj = Players.getByName(carriername); 
                         carrierid = carrierobj['id'];
                         
-                        
-                        console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
+                        $('#blueflagcarrierinfo').html(Players.get(carrierid).health); $('#blueflagcarrierinfo').css(shipstylearray[Players.get(carrierid).type]);
+                        //console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
                     }
                     else {
                         console.log("noone carrying blue flag");
-                        
+                        $('#blueflagcarrierinfo').html();
                         
                         clearInterval(checkcarryinterval);
                     }
