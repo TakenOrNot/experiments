@@ -63,11 +63,16 @@
                 carriername = $( "#blueflag-name" ).justtext();
             }
                 
+                #sidebar #selectaircraft-1 {
+    background-size: 70%;
+            
+    
+            if (carriername.length > 0){ 
                 
-            var carrierobj = Players.getByName(carriername); 
-            var carrierid = carrierobj['id'];
-            var carrierteam = carrierobj['team'];
-           
+                var carrierobj = Players.getByName(carriername); 
+                var carrierid = carrierobj['id'];
+                var carrierteam = carrierobj['team'];
+            }
             
             
             // check if still beeing carried (no drop event...)
