@@ -42,7 +42,7 @@
     
     /* GUI */
     
-    $('#body').append("<div id='blueflagcarrierinfo' style='position: absolute;left: 33%; top: 1em;color: white;height: 35px;width: 100px;text-align: right;'></div><div id='redflagcarrierinfo' style='position: absolute;right: 33%; top: 1em;color: white;height: 35px;width: 100px;'></div>");
+    $('body').append("<div id='blueflagcarrierinfo' style='position: absolute;left: 33%; top: 1em;color: white;height: 35px;width: 100px;text-align: right;'></div><div id='redflagcarrierinfo' style='position: absolute;right: 33%; top: 1em;color: white;height: 35px;width: 100px;'></div>");
     
     
     
