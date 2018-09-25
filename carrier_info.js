@@ -133,7 +133,7 @@
                         
                         $('#redflagcarrierinfo').html(carrierhealth); 
                         $('#redflagcarrierinfo').css({background: "'" + shipstylearray[carriership] + "'"});
-                        console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
+                        console.log(carriername + " carrying red flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
                         console.log(shipstylearray[carriership]);
                     }
                     else {
