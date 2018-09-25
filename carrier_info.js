@@ -79,7 +79,7 @@
     
     // check if still beeing carried (no drop event...)
             
-            function checkcarry(carriername, teamflag){
+            function checkcarry(carriername, team){
                 if (carriername.length > 0){ 
                 
                     var carrierobj = Players.getByName(carriername); 
@@ -144,7 +144,7 @@
                 if (carriername.length > 0){
                     if (!window.checkblueflag){
                         window.checkblueflag = true;
-                        checkblueflaginterval = window.setInterval(checkcarry(carriername,2), 1000);
+                        checkblueflaginterval = window.setInterval(checkcarry(carriername,team), 1000);
 
                     }
                 }
@@ -155,7 +155,7 @@
                 if (carriername.length > 0){ 
                     if (!window.checkredflag){
                         window.checkredflag = true;
-                        checkredflaginterval = window.setInterval(checkcarry(carriername,1), 1000);
+                        checkredflaginterval = window.setInterval(checkcarry(carriername,team), 1000);
 
                     }
                 }
