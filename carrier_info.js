@@ -89,7 +89,7 @@
                 if (carriername.length > 0){
                     if (!window.checkblueflag){
                         window.checkblueflag = true;
-                        var checkblueflaginterval = setInterval(checkcarry(carriername,team), 1000);
+                        var checkblueflaginterval = setInterval(checkbluecarry, 1000);
 
                     }
                 }
@@ -100,7 +100,7 @@
                 if (carriername.length > 0){ 
                     if (!window.checkredflag){
                         window.checkredflag = true;
-                        var checkredflaginterval = setInterval(checkcarry(carriername,team), 1000);
+                        var checkredflaginterval = setInterval(checkredcarry, 1000);
 
                     }
                 }
@@ -109,59 +109,52 @@
         
             // check if still beeing carried (no drop event...)
             
-            function checkcarry(carriername, team){
+            function checkbluecarry(){
+                var carriername = $( "#blueflag-name" ).justtext();
                 if (carriername.length > 0){ 
-                
+                    
                     var carrierobj = Players.getByName(carriername); 
                     var carrierid = carrierobj['id'];
                     var carrierteam = carrierobj['team'];
                     var carriership = Players.get(carrierid).type;
                     var carrierhealth = Players.get(carrierid).health;
+                    $('#blueflagcarrierinfo').html(carrierhealth);
+                    $('#blueflagcarrierinfo').css({background: "'" + shipstylearray[carriership] + "'"});
+                    console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
+                    console.log(shipstylearray[carriership]);
+                }
+                else {
+                    console.log("noone carrying blue flag");
+                    $('#blueflagcarrierinfo').html('');
+                        
+                    clearInterval(checkblueflaginterval);
                 }
                 
-                if (carrierteam == 1){
-                    var carriername = $( "#redflag-name" ).justtext();
+            }
+        
+        
+            function checkredcarry(){
+                var carriername = $( "#redflag-name" ).justtext();
+                if (carriername.length > 0){ 
                     
-                    if (carriername.length > 0){ 
-                        carrierobj = Players.getByName(carriername); 
-                        carrierid = carrierobj['id'];
-                        carriership = Players.get(carrierid).type;
-                        carrierhealth = Math.round(Players.get(carrierid).health);
-                        
-                        
-                        $('#redflagcarrierinfo').html(carrierhealth); 
-                        $('#redflagcarrierinfo').css({background: "'" + shipstylearray[carriership] + "'"});
-                        console.log(carriername + " carrying red flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
-                        console.log(shipstylearray[carriership]);
-                    }
-                    else {
-                        console.log("noone carrying red flag");
-                        $('#redflagcarrierinfo').html('');
-                        clearInterval(checkredflaginterval);
-                    }
-                    
+                    var carrierobj = Players.getByName(carriername); 
+                    var carrierid = carrierobj['id'];
+                    var carrierteam = carrierobj['team'];
+                    var carriership = Players.get(carrierid).type;
+                    var carrierhealth = Players.get(carrierid).health;
+               
+                    $('#redflagcarrierinfo').html(carrierhealth); 
+                    $('#redflagcarrierinfo').css({background: "'" + shipstylearray[carriership] + "'"});
+                    console.log(carriername + " carrying red flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
+                    console.log(shipstylearray[carriership]);
                 }
-                else if (carrierteam == 2){
-                    var carriername = $( "#blueflag-name" ).justtext();
-                    
-                    if (carriername.length > 0){ 
-                        carrierobj = Players.getByName(carriername); 
-                        carrierid = carrierobj['id'];
-                        carriership = Players.get(carrierid).type;
-                        carrierhealth = Math.round(Players.get(carrierid).health);
-                        
-                        $('#blueflagcarrierinfo').html(carrierhealth);
-                        $('#blueflagcarrierinfo').css({background: "'" + shipstylearray[carriership] + "'"});
-                        console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
-                        console.log(shipstylearray[carriership]);
-                    }
-                    else {
-                        console.log("noone carrying blue flag");
-                        $('#blueflagcarrierinfo').html('');
-                        
-                        clearInterval(checkblueflaginterval);
-                    }
+                else {
+                    console.log("noone carrying red flag");
+                    $('#redflagcarrierinfo').html('');
+                    clearInterval(checkredflaginterval);
                 }
+                    
+                
             }
                 
                 
