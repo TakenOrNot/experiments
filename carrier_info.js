@@ -66,7 +66,8 @@
     let ship5compStyles = window.getComputedStyle(ship5);
     var ship5bg = ship5compStyles.getPropertyValue('background');
     
-    shipstylearray = [ship1bg, ship2bg, ship3bg, ship4bg, ship5bg]
+    
+    shipstylearray = [ship1bg, ship2bg, ship3bg, ship4bg, ship5bg];
     
     
     SWAM.on ( 'gamePrep', function () {
@@ -110,6 +111,7 @@
                         
                         $('#redflagcarrierinfo').html(Players.get(carrierid).health);    $('#redflagcarrierinfo').css(shipstylearray[Players.get(carrierid).type]);
                         //console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
+                        console.log(shipstylearray[Players.get(carrierid).type]);
                     }
                     else {
                         console.log("noone carrying red flag");
@@ -127,6 +129,7 @@
                         
                         $('#blueflagcarrierinfo').html(Players.get(carrierid).health); $('#blueflagcarrierinfo').css(shipstylearray[Players.get(carrierid).type]);
                         //console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
+                        console.log(shipstylearray[Players.get(carrierid).type]);
                     }
                     else {
                         console.log("noone carrying blue flag");
