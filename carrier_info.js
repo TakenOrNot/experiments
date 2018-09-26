@@ -124,7 +124,7 @@
                     
                      
                     var carrierhealth = Math.round(Players.get(carrierid).health * 100) / 100;
-                    carrierhealth = (carrierhealth * 100);
+                    carrierhealth = Math.trunc(carrierhealth * 100);
                     
                     if (window.redcarrierhealth != carrierhealth){
                         $('#blueflagcarrierinfo').html(carrierhealth);
@@ -169,7 +169,7 @@
                     var carriership = Players.get(carrierid).type;
                     
                     var carrierhealth = Math.round(Players.get(carrierid).health * 100) / 100;
-                    carrierhealth = (carrierhealth * 100);
+                    carrierhealth = Math.trunc(carrierhealth * 100);
                     
                     if (window.bluecarrierhealth != carrierhealth){
                         $('#redflagcarrierinfo').html(carrierhealth);
