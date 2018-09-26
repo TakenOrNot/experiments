@@ -117,7 +117,7 @@
                     var carrierid = carrierobj['id'];
                     var carrierteam = carrierobj['team'];
                     var carriership = Players.get(carrierid).type;
-                    var carrierhealth = Players.get(carrierid).health;
+                    var carrierhealth = Math.round(Players.get(carrierid).health * 100) / 100;
                     var carriershiparrindex = (carriership - 1);
                     $('#blueflagcarrierinfo').html(carrierhealth);
                     $('#blueflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] });
@@ -144,7 +144,7 @@
                     var carrierid = carrierobj['id'];
                     var carrierteam = carrierobj['team'];
                     var carriership = Players.get(carrierid).type;
-                    var carrierhealth = Players.get(carrierid).health;
+                    var carrierhealth = Math.round(Players.get(carrierid).health * 100) / 100;
                     var carriershiparrindex = (carriership - 1);
                     $('#redflagcarrierinfo').html(carrierhealth); 
                     $('#redflagcarrierinfo').css({background: shipstylearray[carriershiparrindex]});
