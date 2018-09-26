@@ -48,32 +48,32 @@
     
     
     
-    let ship1 = document.querySelector('#sidebar #selectaircraft-1');
-    let ship1compStyles = window.getComputedStyle(ship1);
-    var ship1bg = ship1compStyles.getPropertyValue('background');
     
-    let ship2 = document.querySelector('#sidebar #selectaircraft-2');
-    let ship2compStyles = window.getComputedStyle(ship2);
-    var ship2bg = ship2compStyles.getPropertyValue('background');
-    
-    let ship3 = document.querySelector('#sidebar #selectaircraft-3');
-    let ship3compStyles = window.getComputedStyle(ship3);
-    var ship3bg = ship3compStyles.getPropertyValue('background');
-    
-    let ship4 = document.querySelector('#sidebar #selectaircraft-4');
-    let ship4compStyles = window.getComputedStyle(ship4);
-    var ship4bg = ship4compStyles.getPropertyValue('background');
-    
-    let ship5 = document.querySelector('#sidebar #selectaircraft-5');
-    let ship5compStyles = window.getComputedStyle(ship5);
-    var ship5bg = ship5compStyles.getPropertyValue('background');
-    
-    
-    shipstylearray = [ship1bg, ship2bg, ship3bg, ship4bg, ship5bg];
     
     
     SWAM.on ( 'gamePrep', function () {
-        
+        let ship1 = document.querySelector('#sidebar #selectaircraft-1');
+        let ship1compStyles = window.getComputedStyle(ship1);
+        var ship1bg = ship1compStyles.getPropertyValue('background');
+
+        let ship2 = document.querySelector('#sidebar #selectaircraft-2');
+        let ship2compStyles = window.getComputedStyle(ship2);
+        var ship2bg = ship2compStyles.getPropertyValue('background');
+
+        let ship3 = document.querySelector('#sidebar #selectaircraft-3');
+        let ship3compStyles = window.getComputedStyle(ship3);
+        var ship3bg = ship3compStyles.getPropertyValue('background');
+
+        let ship4 = document.querySelector('#sidebar #selectaircraft-4');
+        let ship4compStyles = window.getComputedStyle(ship4);
+        var ship4bg = ship4compStyles.getPropertyValue('background');
+
+        let ship5 = document.querySelector('#sidebar #selectaircraft-5');
+        let ship5compStyles = window.getComputedStyle(ship5);
+        var ship5bg = ship5compStyles.getPropertyValue('background');
+
+
+        shipstylearray = [ship1bg, ship2bg, ship3bg, ship4bg, ship5bg];
     });
     
     
@@ -120,7 +120,7 @@
                     var carrierhealth = Players.get(carrierid).health;
                     var carriershiparrindex = (carriership - 1);
                     $('#blueflagcarrierinfo').html(carrierhealth);
-                    $('#blueflagcarrierinfo').css({background: shipstylearray[carriership] });
+                    $('#blueflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] });
                     console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
                     
                 }
