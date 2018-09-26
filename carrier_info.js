@@ -118,15 +118,16 @@
                     var carrierteam = carrierobj['team'];
                     var carriership = Players.get(carrierid).type;
                     var carrierhealth = Players.get(carrierid).health;
+                    var carriershiparrindex = (carriership - 1);
                     $('#blueflagcarrierinfo').html(carrierhealth);
                     $('#blueflagcarrierinfo').css({background: shipstylearray[carriership] });
                     console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
-                    console.log(shipstylearray[carriership]);
+                    console.log(shipstylearray[carriershiparrindex]);
                 }
                 else {
                     console.log("noone carrying blue flag");
                     $('#blueflagcarrierinfo').html('');
-                    $('#blueflagcarrierinfo').css({background: none});    
+                    $('#blueflagcarrierinfo').css({background: "none"});    
                     clearInterval(checkblueflaginterval);
                     window.checkblueflag = '';
         
@@ -144,16 +145,16 @@
                     var carrierteam = carrierobj['team'];
                     var carriership = Players.get(carrierid).type;
                     var carrierhealth = Players.get(carrierid).health;
-               
+                    var carriershiparrindex = (carriership - 1);
                     $('#redflagcarrierinfo').html(carrierhealth); 
-                    $('#redflagcarrierinfo').css({background: shipstylearray[carriership]});
+                    $('#redflagcarrierinfo').css({background: shipstylearray[carriershiparrindex]});
                     console.log(carriername + " carrying red flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
                     console.log(shipstylearray[carriership]);
                 }
                 else {
                     console.log("noone carrying red flag");
                     $('#redflagcarrierinfo').html('');
-                    $('#redflagcarrierinfo').css({background: none}); 
+                    $('#redflagcarrierinfo').css({background: "none"}); 
                     clearInterval(checkredflaginterval);
                     window.checkredflag = '';
                 }
