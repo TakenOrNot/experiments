@@ -9,10 +9,6 @@
         initEvents ();
         window.checkblueflag = '';
         window.checkredflag = '';
-        window.redcarriership = '';
-        window.redcarrierhealth = '';
-        window.bluecarriership = '';
-        window.bluecarrierhealth = '';
     }
 
     function initEvents () {
@@ -48,7 +44,7 @@
     
     /* GUI */
     
-    $('body').append("<div id='blueflagcarrierinfo' style='position: absolute;left: 50%;margin-left: -215px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 100px;text-align: right; border-radius:100px;'></div><div id='redflagcarrierinfo' style='position: absolute;right: 50%; margin-right: -215px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 100px;text-align: right; border-radius:100px;'></div>");
+    $('body').append("<div id='blueflagcarrierinfo' style='position: absolute;left: 50%;margin-left: -215px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 100px;text-align: right;'></div><div id='redflagcarrierinfo' style='position: absolute;right: 50%; margin-right: -215px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 100px;text-align: right;'></div>");
     
     
     
@@ -87,7 +83,7 @@
     function onFlagEvent ( event, team, verb ) {
         
             console.log('FLAG EVENT : ' + team + ' ' + verb);
-            // check game.myTeam (?)
+            // less cheaty : check game.myTeam
             if (team == 1) {
                 carriername = $( "#blueflag-name" ).justtext();
                 if (carriername.length > 0){
@@ -121,38 +117,20 @@
                     var carrierid = carrierobj['id'];
                     var carrierteam = carrierobj['team'];
                     var carriership = Players.get(carrierid).type;
-                    
-                     
                     var carrierhealth = Math.round(Players.get(carrierid).health * 100) / 100;
                     carrierhealth = (carrierhealth * 100);
-                    
-                    if (window.redcarrierhealth != carrierhealth){
-                        $('#blueflagcarrierinfo').html(carrierhealth);
-                    }
-                    
-                    if (window.redcarriership != carriership) {
-                        $('#blueflagcarrierinfo').addClass('ship-' + carriership);
-                        var carriershiparrindex = (carriership - 1);
-                        $('#blueflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] });
-                    }
-                    
-                    
-                    
-                    window.redcarriership = carriership;
-                    window.redcarrierhealth = carrierhealth;
-                    
-                    
+                    var carriershiparrindex = (carriership - 1);
+                    $('#blueflagcarrierinfo').html(carrierhealth);
+                    $('#blueflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] });
                     console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
                     
                 }
                 else {
                     console.log("noone carrying blue flag");
-                    $('#blueflagcarrierinfo').html('').removeClass();
+                    $('#blueflagcarrierinfo').html('');
                     $('#blueflagcarrierinfo').css({background: "none"});    
                     clearInterval(checkblueflaginterval);
                     window.checkblueflag = '';
-                    window.redcarriership = '';
-                    window.redcarrierhealth = '';
         
                 }
                 
@@ -167,36 +145,20 @@
                     var carrierid = carrierobj['id'];
                     var carrierteam = carrierobj['team'];
                     var carriership = Players.get(carrierid).type;
-                    
                     var carrierhealth = Math.round(Players.get(carrierid).health * 100) / 100;
                     carrierhealth = (carrierhealth * 100);
-                    
-                    if (window.bluecarrierhealth != carrierhealth){
-                        $('#redflagcarrierinfo').html(carrierhealth);
-                    }
-                    
-                    if (window.bluecarriership != carriership) {
-                        $('#redflagcarrierinfo').addClass('ship-' + carriership);
-                        var carriershiparrindex = (carriership - 1);
-                        $('#redflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] });
-                    }
-                    
-                    
-                    
-                    window.bluecarriership = carriership;
-                    window.bluecarrierhealth = carrierhealth;
-                    
+                    var carriershiparrindex = (carriership - 1);
+                    $('#redflagcarrierinfo').html(carrierhealth); 
+                    $('#redflagcarrierinfo').css({background: shipstylearray[carriershiparrindex]});
                     console.log(carriername + " carrying red flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
                     
                 }
                 else {
                     console.log("noone carrying red flag");
-                    $('#redflagcarrierinfo').html('').removeClass();
+                    $('#redflagcarrierinfo').html('');
                     $('#redflagcarrierinfo').css({background: "none"}); 
                     clearInterval(checkredflaginterval);
                     window.checkredflag = '';
-                    window.bluecarriership = '';
-                    window.bluecarrierhealth = '';
                 }
                     
                 
