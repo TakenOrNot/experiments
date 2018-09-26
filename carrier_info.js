@@ -134,7 +134,7 @@
                     if (window.redcarriership != carriership) {
                         $('#blueflagcarrierinfo').addClass('ship-' + carriership);
                         var carriershiparrindex = (carriership - 1);
-                        $('#blueflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] });
+                        $('#blueflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] }).css({background-color: "rgba(255,0,0,.25)"});
                     }
                     
                     
@@ -179,7 +179,7 @@
                     if (window.bluecarriership != carriership) {
                         $('#redflagcarrierinfo').addClass('ship-' + carriership);
                         var carriershiparrindex = (carriership - 1);
-                        $('#redflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] });
+                        $('#redflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] }).css({background-color: "rgba(0,255,255,.25)"});
                     }
                     
                     
