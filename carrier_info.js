@@ -13,6 +13,7 @@
         window.redcarrierhealth = '';
         window.bluecarriership = '';
         window.bluecarrierhealth = '';
+        window.sauron = '';
     }
 
     function initEvents () {
@@ -88,7 +89,7 @@
         
             console.log('FLAG EVENT : ' + team + ' ' + verb);
             // check game.myTeam (?)
-            if (team == 1) {
+            if (team == 1 && game.myTeam == 2) OR (team == 1 && window.sauron == true){
                 carriername = $( "#blueflag-name" ).justtext();
                 if (carriername.length > 0){
                     if (!window.checkblueflag){
@@ -98,7 +99,7 @@
                     }
                 }
             }
-            else if (team == 2){
+            else if (team == 2 && game.myTeam == 1) OR (team == 2 && window.sauron == true){
                 carriername = $( "#redflag-name" ).justtext();
                 
                 if (carriername.length > 0){ 
