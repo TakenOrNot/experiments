@@ -44,7 +44,7 @@
     
     /* GUI */
     
-    $('body').append("<div id='blueflagcarrierinfo' style='position: absolute;left: 50%;margin-left: -205px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 100px;text-align: right;'></div><div id='redflagcarrierinfo' style='position: absolute;right: 50%; margin-right: -205px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 100px;'></div>");
+    $('body').append("<div id='blueflagcarrierinfo' style='position: absolute;left: 50%;margin-left: -205px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 100px;text-align: right;'></div><div id='redflagcarrierinfo' style='position: absolute;right: 50%; margin-right: -205px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 100px;text-align: right;'></div>");
     
     
     
