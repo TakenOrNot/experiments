@@ -122,7 +122,7 @@
                     $('#blueflagcarrierinfo').html(carrierhealth);
                     $('#blueflagcarrierinfo').css({background: shipstylearray[carriership] });
                     console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
-                    console.log(shipstylearray[carriershiparrindex]);
+                    
                 }
                 else {
                     console.log("noone carrying blue flag");
@@ -149,7 +149,7 @@
                     $('#redflagcarrierinfo').html(carrierhealth); 
                     $('#redflagcarrierinfo').css({background: shipstylearray[carriershiparrindex]});
                     console.log(carriername + " carrying red flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
-                    console.log(shipstylearray[carriership]);
+                    
                 }
                 else {
                     console.log("noone carrying red flag");
