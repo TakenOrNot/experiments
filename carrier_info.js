@@ -126,7 +126,7 @@
                 else {
                     console.log("noone carrying blue flag");
                     $('#blueflagcarrierinfo').html('');
-                        
+                    $('#blueflagcarrierinfo').css({background: none});    
                     clearInterval(checkblueflaginterval);
                     window.checkblueflag = '';
         
@@ -153,6 +153,7 @@
                 else {
                     console.log("noone carrying red flag");
                     $('#redflagcarrierinfo').html('');
+                    $('#redflagcarrierinfo').css({background: none}); 
                     clearInterval(checkredflaginterval);
                     window.checkredflag = '';
                 }
