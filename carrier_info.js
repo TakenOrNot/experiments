@@ -57,6 +57,20 @@
     
     
     SWAM.on ( 'gamePrep', function () {
+        $('#blueflagcarrierinfo').html('').removeClass();
+        $('#blueflagcarrierinfo').css({background: "none"}); 
+        $('#redflagcarrierinfo').html('').removeClass();
+        $('#redflagcarrierinfo').css({background: "none"}); 
+        
+        // TODO : if gametype is ctf, set checkblueflag and checkredflag to true 
+        // so we can check if flag is already out
+        window.checkblueflag = '';
+        window.checkredflag = '';
+        window.redcarriership = '';
+        window.redcarrierhealth = '';
+        window.bluecarriership = '';
+        window.bluecarrierhealth = '';
+        
         let ship1 = document.querySelector('#sidebar #selectaircraft-1');
         let ship1compStyles = window.getComputedStyle(ship1);
         var ship1bg = ship1compStyles.getPropertyValue('background');
