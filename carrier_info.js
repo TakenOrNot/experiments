@@ -94,7 +94,7 @@
                     console.log("noone carrying blue flag");
                     $('#blueflagcarrierinfo').html('').removeClass();
                     $('#blueflagcarrierinfo').css({background: "none"});    
-                    clearInterval(checkblueflaginterval);
+                    clearInterval(window.checkblueflaginterval);
                     window.checkblueflag = '';
                     window.redcarriership = '';
                     window.redcarrierhealth = '';
@@ -138,7 +138,7 @@
                     console.log("noone carrying red flag");
                     $('#redflagcarrierinfo').html('').removeClass();
                     $('#redflagcarrierinfo').css({background: "none"}); 
-                    clearInterval(checkredflaginterval);
+                    clearInterval(window.checkredflaginterval);
                     window.checkredflag = '';
                     window.bluecarriership = '';
                     window.bluecarrierhealth = '';
@@ -160,7 +160,7 @@
                 if (carriername.length > 0){
                     if (!window.checkblueflag){
                         window.checkblueflag = true;
-                        var checkblueflaginterval = setInterval(checkbluecarry, 1000);
+                        window.checkblueflaginterval = setInterval(checkbluecarry, 1000);
 
                     }
                 }
@@ -171,7 +171,7 @@
                 if (carriername.length > 0){ 
                     if (!window.checkredflag){
                         window.checkredflag = true;
-                        var checkredflaginterval = setInterval(checkredcarry, 1000);
+                        window.checkredflaginterval = setInterval(checkredcarry, 1000);
 
                     }
                 }
@@ -197,11 +197,11 @@
             if (game.gameType == SWAM.GAME_TYPE.CTF) {
                 if (game.myTeam == 2){
                     window.checkblueflag = true;
-                    var checkblueflaginterval = setInterval(checkbluecarry, 1000);
+                    window.checkblueflaginterval = setInterval(checkbluecarry, 1000);
                 }
                 else {
                     window.checkredflag = true;
-                    var checkredflaginterval = setInterval(checkredcarry, 1000);
+                    window.checkredflaginterval = setInterval(checkredcarry, 1000);
                 }
             }
             else {
