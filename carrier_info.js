@@ -49,7 +49,7 @@
     
     /* GUI */
     
-    $('body').append("<div id='blueflagcarrierinfo' style='position: absolute;left: 50%;margin-left: -215px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 100px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;'></div><div id='redflagcarrierinfo' style='position: absolute;right: 50%; margin-right: -215px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 100px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;'></div>");
+    $('body').append("<div id='blueflagcarrierinfo' style='position: absolute;left: 50%;margin-left: -208px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;'></div><div id='redflagcarrierinfo' style='position: absolute;right: 50%; margin-right: -208px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;'></div>");
     
     
     
@@ -57,46 +57,55 @@
     
     
     SWAM.on ( 'gamePrep', function () {
-        $('#blueflagcarrierinfo').html('').removeClass();
-        $('#blueflagcarrierinfo').css({background: "none"}); 
-        $('#redflagcarrierinfo').html('').removeClass();
-        $('#redflagcarrierinfo').css({background: "none"}); 
-        
-        // TODO : if gametype is ctf, set checkblueflag and checkredflag to true 
-        // so we can check if flag is already out
-        window.checkblueflag = '';
-        window.checkredflag = '';
-        window.redcarriership = '';
-        window.redcarrierhealth = '';
-        window.bluecarriership = '';
-        window.bluecarrierhealth = '';
-        
-        let ship1 = document.querySelector('#sidebar #selectaircraft-1');
-        let ship1compStyles = window.getComputedStyle(ship1);
-        //var ship1bg = ship1compStyles.getPropertyValue('background');
-        var ship1bg = $('#selectaircraft-1').css("background");
-        
-        let ship2 = document.querySelector('#sidebar #selectaircraft-2');
-        let ship2compStyles = window.getComputedStyle(ship2);
-        //var ship2bg = ship2compStyles.getPropertyValue('background');
-        var ship2bg = $('#selectaircraft-2').css("background");
-        
-        let ship3 = document.querySelector('#sidebar #selectaircraft-3');
-        let ship3compStyles = window.getComputedStyle(ship3);
-        //var ship3bg = ship3compStyles.getPropertyValue('background');
-        var ship3bg = $('#selectaircraft-3').css("background");
-        
-        let ship4 = document.querySelector('#sidebar #selectaircraft-4');
-        let ship4compStyles = window.getComputedStyle(ship4);
-        //var ship4bg = ship4compStyles.getPropertyValue('background');
-        var ship4bg = $('#selectaircraft-4').css("background");
+        setTimeout(()=>{
+            $('#blueflagcarrierinfo').html('').removeClass();
+            $('#blueflagcarrierinfo').css({background: "none"}); 
+            $('#redflagcarrierinfo').html('').removeClass();
+            $('#redflagcarrierinfo').css({background: "none"}); 
 
-        let ship5 = document.querySelector('#sidebar #selectaircraft-5');
-        let ship5compStyles = window.getComputedStyle(ship5);
-        //var ship5bg = ship5compStyles.getPropertyValue('background');
-        var ship5bg = $('#selectaircraft-5').css("background");
+            // if gametype is ctf, set checkblueflag and checkredflag to true 
+            // so we can check if flag is already out
+            if (game.gameType == SWAM.GAME_TYPE.CTF) {
+                window.checkblueflag = true;
+                window.checkredflag = true;
+            }
+            else {
+                window.checkblueflag = '';
+                window.checkredflag = '';
+            }
+            window.redcarriership = '';
+            window.redcarrierhealth = '';
+            window.bluecarriership = '';
+            window.bluecarrierhealth = '';
 
-        shipstylearray = [ship1bg, ship2bg, ship3bg, ship4bg, ship5bg];
+            //let ship1 = document.querySelector('#sidebar #selectaircraft-1');
+            //let ship1compStyles = window.getComputedStyle(ship1);
+            //var ship1bg = ship1compStyles.getPropertyValue('background');
+            var ship1bg = $('#selectaircraft-1').css("background");
+
+            //let ship2 = document.querySelector('#sidebar #selectaircraft-2');
+            //let ship2compStyles = window.getComputedStyle(ship2);
+            //var ship2bg = ship2compStyles.getPropertyValue('background');
+            var ship2bg = $('#selectaircraft-2').css("background");
+
+
+            //let ship3 = document.querySelector('#sidebar #selectaircraft-3');
+            //let ship3compStyles = window.getComputedStyle(ship3);
+            //var ship3bg = ship3compStyles.getPropertyValue('background');
+            var ship3bg = $('#selectaircraft-3').css("background");
+
+            //let ship4 = document.querySelector('#sidebar #selectaircraft-4');
+            //let ship4compStyles = window.getComputedStyle(ship4);
+            //var ship4bg = ship4compStyles.getPropertyValue('background');
+            var ship4bg = $('#selectaircraft-4').css("background");
+
+            //let ship5 = document.querySelector('#sidebar #selectaircraft-5');
+            //let ship5compStyles = window.getComputedStyle(ship5);
+            //var ship5bg = ship5compStyles.getPropertyValue('background');
+            var ship5bg = $('#selectaircraft-5').css("background");
+
+            shipstylearray = [ship1bg, ship2bg, ship3bg, ship4bg, ship5bg];
+        },0);    
     });
     
     
