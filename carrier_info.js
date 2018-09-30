@@ -56,40 +56,7 @@
     
     
     
-    
-    
-    
-    
-    
-    var carriername = '';
-    function onFlagEvent ( event, team, verb ) {
-        
-            console.log('FLAG EVENT : ' + team + ' ' + verb);
-            // check game.myTeam (?)
-            if ((team == 1 && game.myTeam == 2) || (team == 1 && window.sauron == true)){
-                carriername = $( "#blueflag-name" ).justtext();
-                if (carriername.length > 0){
-                    if (!window.checkblueflag){
-                        window.checkblueflag = true;
-                        var checkblueflaginterval = setInterval(checkbluecarry, 1000);
-
-                    }
-                }
-            }
-            else if ((team == 2 && game.myTeam == 1) || (team == 2 && window.sauron == true)){
-                carriername = $( "#redflag-name" ).justtext();
-                
-                if (carriername.length > 0){ 
-                    if (!window.checkredflag){
-                        window.checkredflag = true;
-                        var checkredflaginterval = setInterval(checkredcarry, 1000);
-
-                    }
-                }
-                
-            }
-        
-            // check if still beeing carried (no drop event...)
+    // check if still beeing carried (no drop event...)
             
             function checkbluecarry(){
                 var carriername = $( "#blueflag-name" ).justtext();
@@ -179,6 +146,39 @@
                     
                 
             }
+    
+    
+    
+    
+    var carriername = '';
+    function onFlagEvent ( event, team, verb ) {
+        
+            console.log('FLAG EVENT : ' + team + ' ' + verb);
+            // check game.myTeam (?)
+            if ((team == 1 && game.myTeam == 2) || (team == 1 && window.sauron == true)){
+                carriername = $( "#blueflag-name" ).justtext();
+                if (carriername.length > 0){
+                    if (!window.checkblueflag){
+                        window.checkblueflag = true;
+                        var checkblueflaginterval = setInterval(checkbluecarry, 1000);
+
+                    }
+                }
+            }
+            else if ((team == 2 && game.myTeam == 1) || (team == 2 && window.sauron == true)){
+                carriername = $( "#redflag-name" ).justtext();
+                
+                if (carriername.length > 0){ 
+                    if (!window.checkredflag){
+                        window.checkredflag = true;
+                        var checkredflaginterval = setInterval(checkredcarry, 1000);
+
+                    }
+                }
+                
+            }
+        
+            
                 
                 
             
