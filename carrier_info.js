@@ -67,7 +67,9 @@
             // so we can check if flag is already out
             if (game.gameType == SWAM.GAME_TYPE.CTF) {
                 window.checkblueflag = true;
+                var checkblueflaginterval = setInterval(checkbluecarry, 1000);
                 window.checkredflag = true;
+                var checkredflaginterval = setInterval(checkredcarry, 1000);
             }
             else {
                 window.checkblueflag = '';
