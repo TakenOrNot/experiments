@@ -73,24 +73,28 @@
         
         let ship1 = document.querySelector('#sidebar #selectaircraft-1');
         let ship1compStyles = window.getComputedStyle(ship1);
-        var ship1bg = ship1compStyles.getPropertyValue('background-image');
-
+        //var ship1bg = ship1compStyles.getPropertyValue('background');
+        var ship1bg = $('#selectaircraft-1').css("background");
+        
         let ship2 = document.querySelector('#sidebar #selectaircraft-2');
         let ship2compStyles = window.getComputedStyle(ship2);
-        var ship2bg = ship2compStyles.getPropertyValue('background-image');
-
+        //var ship2bg = ship2compStyles.getPropertyValue('background');
+        var ship2bg = $('#selectaircraft-2').css("background");
+        
         let ship3 = document.querySelector('#sidebar #selectaircraft-3');
         let ship3compStyles = window.getComputedStyle(ship3);
-        var ship3bg = ship3compStyles.getPropertyValue('background-image');
-
+        //var ship3bg = ship3compStyles.getPropertyValue('background');
+        var ship3bg = $('#selectaircraft-3').css("background");
+        
         let ship4 = document.querySelector('#sidebar #selectaircraft-4');
         let ship4compStyles = window.getComputedStyle(ship4);
-        var ship4bg = ship4compStyles.getPropertyValue('background-image');
+        //var ship4bg = ship4compStyles.getPropertyValue('background');
+        var ship4bg = $('#selectaircraft-4').css("background");
 
         let ship5 = document.querySelector('#sidebar #selectaircraft-5');
         let ship5compStyles = window.getComputedStyle(ship5);
-        var ship5bg = ship5compStyles.getPropertyValue('background-image');
-
+        //var ship5bg = ship5compStyles.getPropertyValue('background');
+        var ship5bg = $('#selectaircraft-5').css("background");
 
         shipstylearray = [ship1bg, ship2bg, ship3bg, ship4bg, ship5bg];
     });
