@@ -141,7 +141,7 @@
             function checkredcarry(){
                 var carriername = $( "#redflag-name" ).justtext();
                 if (carriername.length > 0){ 
-                    $('#blueflagcarrierinfo').css({display: "block"});
+                    $('#redflagcarrierinfo').css({display: "block"});
                     
                     var carrierobj = Players.getByName(carriername); 
                     var carrierid = carrierobj['id'];
