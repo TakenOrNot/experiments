@@ -359,6 +359,7 @@
         id: 'CarrierInfo',
         description: '',
         version: '0.0.1',
+        settingsProvider: createSettingsProvider(),
         author: 'xplay'
     });
     
