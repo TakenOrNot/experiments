@@ -142,7 +142,7 @@
                         $('#redflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "rgba(0,255,255,.25)");
                         
                         $('#redflagcarrierinfo').css('background-position',($('#redflag-name').width() - 58) + "px" + " 44px");
-                    }
+                    } 
                     
                     
                     
