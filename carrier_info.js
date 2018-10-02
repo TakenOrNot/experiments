@@ -87,6 +87,9 @@
                 if (carriername.length > 0){ 
                     $('#blueflagcarrierinfo').css({display: "block"});
                     
+                    $('#blueflagcarrierinfo').width($('#blueflag-name').width() - 20);
+                    $('#blueflagcarrierinfo').css( {marginLeft : "-" + ($('#blueflag-name').width() + 90) + "px"});
+                    
                     var carrierobj = Players.getByName(carriername); 
                     var carrierid = carrierobj['id'];
                     var carrierteam = carrierobj['team'];
@@ -100,8 +103,8 @@
                         //$('#blueflagcarrierinfo').html(carrierhealth);
                         $('#blueflagcarrierinfo > .health').html("[" + carrierhealth + "]");
                         
-                        $('#blueflagcarrierinfo').width($('#blueflag-name').width() - 20);
-                        $('#blueflagcarrierinfo').css( {marginLeft : "-" + ($('#blueflag-name').width() + 90) + "px"});
+                        //$('#blueflagcarrierinfo').width($('#blueflag-name').width() - 20);
+                        //$('#blueflagcarrierinfo').css( {marginLeft : "-" + ($('#blueflag-name').width() + 90) + "px"});
                         
                         console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
                     }
@@ -145,6 +148,9 @@
                 if (carriername.length > 0){ 
                     $('#redflagcarrierinfo').css({display: "block"});
                     
+                    $('#redflagcarrierinfo').width($('#redflag-name').width() - 20);
+                    $('#redflagcarrierinfo').css( {marginRight : "-" + ($('#redflag-name').width() + 90) + "px"});
+                        
                     var carrierobj = Players.getByName(carriername); 
                     var carrierid = carrierobj['id'];
                     var carrierteam = carrierobj['team'];
@@ -156,8 +162,8 @@
                     if (window.bluecarrierhealth != carrierhealth){
                         $('#redflagcarrierinfo > .health').html("[" + carrierhealth + "]");
                         
-                        $('#redflagcarrierinfo').width($('#redflag-name').width() - 20);
-                        $('#redflagcarrierinfo').css( {marginRight : "-" + ($('#redflag-name').width() + 90) + "px"});
+                        //$('#redflagcarrierinfo').width($('#redflag-name').width() - 20);
+                        //$('#redflagcarrierinfo').css( {marginRight : "-" + ($('#redflag-name').width() + 90) + "px"});
                         
                         // $('#redflagcarrierinfo > .ship').css('transform', 'scaleX(-1)')
                         
