@@ -56,7 +56,7 @@
     
     /* GUI */
     
-    $('body').append("<div id='blueflagcarrierinfo'></div><div id='redflagcarrierinfo'></div>");
+    $('body').append("<div id='blueflagcarrierinfo'><div class='ship'></div><div class='health'></div></div><div id='redflagcarrierinfo'><div class='health'></div><div class='ship'></div></div>");
     
     
     
@@ -81,7 +81,7 @@
                     
                     if (window.redcarrierhealth != carrierhealth){
                         //$('#blueflagcarrierinfo').html(carrierhealth);
-                        $('#blueflagcarrierinfo').html("[" + carrierhealth + "]");
+                        $('#blueflagcarrierinfo .health').html("[" + carrierhealth + "]");
                         
                         $('#blueflagcarrierinfo').width($('#blueflag-name').width() - 20);
                         $('#blueflagcarrierinfo').css( {marginLeft : "-" + ($('#blueflag-name').width() + 90) + "px"});
@@ -90,7 +90,7 @@
                     if (window.redcarriership != carriership) {
                         //$('#blueflagcarrierinfo').addClass('ship-' + carriership);
                         var carriershiparrindex = (carriership - 1);
-                        $('#blueflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "rgba(255,0,0,.25)");
+                        $('#blueflagcarrierinfo .ship').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "rgba(255,0,0,.25)");
                     }
                     
                     
@@ -105,7 +105,7 @@
                 else {
                     console.log("noone carrying blue flag");
                     //$('#blueflagcarrierinfo').html('').removeClass();
-                    $('#blueflagcarrierinfo > .health').html('');
+                    $('#blueflagcarrierinfo .health').html('');
                     $('#blueflagcarrierinfo').css({background: "none"});    
                     clearInterval(window.checkblueflaginterval);
                     window.checkblueflag = '';
@@ -130,7 +130,7 @@
                     carrierhealth = Math.trunc(carrierhealth * 100);
                     
                     if (window.bluecarrierhealth != carrierhealth){
-                        $('#redflagcarrierinfo').html("[" + carrierhealth + "]");
+                        $('#redflagcarrierinfo .health').html("[" + carrierhealth + "]");
                         
                         $('#redflagcarrierinfo').width($('#redflag-name').width() - 20);
                         $('#redflagcarrierinfo').css( {marginRight : "-" + ($('#redflag-name').width() + 90) + "px"});
@@ -139,9 +139,9 @@
                     if (window.bluecarriership != carriership) {
                         //$('#redflagcarrierinfo').addClass('ship-' + carriership);
                         var carriershiparrindex = (carriership - 1);
-                        $('#redflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "rgba(0,255,255,.25)");
+                        $('#redflagcarrierinfo .ship').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "rgba(0,255,255,.25)");
                         
-                        $('#redflagcarrierinfo').css('background-position',($('#redflag-name').width() - 58) + "px" + " 44px");
+                        //$('#redflagcarrierinfo').css('background-position',($('#redflag-name').width() - 58) + "px" + " 44px");
                     } 
                     
                     
@@ -154,7 +154,8 @@
                 }
                 else {
                     console.log("noone carrying red flag");
-                    $('#redflagcarrierinfo').html('').removeClass();
+                    //$('#redflagcarrierinfo').html('').removeClass();
+                    $('#redflagcarrierinfo .health').html('')
                     $('#redflagcarrierinfo').css({background: "none"}); 
                     clearInterval(window.checkredflaginterval);
                     window.checkredflag = '';
