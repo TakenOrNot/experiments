@@ -37,6 +37,7 @@
                             top: 0;
                             width: 44px;
                             height: 35px;
+                            transform: scaleX(-1);
                         }
                         #blueflagcarrierinfo .ship {
                             position: absolute;
@@ -101,6 +102,8 @@
                         
                         $('#blueflagcarrierinfo').width($('#blueflag-name').width() - 20);
                         $('#blueflagcarrierinfo').css( {marginLeft : "-" + ($('#blueflag-name').width() + 90) + "px"});
+                        
+                        console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
                     }
                     
                     if (window.redcarriership != carriership) {
@@ -116,7 +119,7 @@
                     window.redcarrierhealth = carrierhealth;
                     
                     
-                    console.log(carriername + " carrying blue flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
+                    
                     
                 }
                 else {
@@ -151,6 +154,10 @@
                         
                         $('#redflagcarrierinfo').width($('#redflag-name').width() - 20);
                         $('#redflagcarrierinfo').css( {marginRight : "-" + ($('#redflag-name').width() + 90) + "px"});
+                        
+                        // $('#redflagcarrierinfo > .ship').css('transform', 'scaleX(-1)')
+                        
+                        console.log(carriername + " carrying red flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
                     }
                     
                     if (window.bluecarriership != carriership) {
@@ -167,7 +174,7 @@
                     window.bluecarriership = carriership;
                     window.bluecarrierhealth = carrierhealth;
                     
-                    console.log(carriername + " carrying red flag with ship : " + Players.get(carrierid).type + " and health : " + Players.get(carrierid).health);
+                    
                     
                 }
                 else {
