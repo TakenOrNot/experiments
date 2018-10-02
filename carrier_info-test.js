@@ -29,10 +29,13 @@
 
         const carrierinfoStyle = `
                     <style id='carrierinfoStyle'>
-                        #blueflagcarrierinfo {position: absolute;left: 50%;margin-left: -208px; top: 49px; padding: 0 1em 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;}
-                        #redflagcarrierinfo {position: absolute;right: 50%; margin-right: -208px; top: 49px; padding: 0 1em 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;}
-                    
+                        #blueflagcarrierinfo {position: absolute;left: 50%;margin-left: -208px; top: 49px; padding: 0 125px 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;z-index:1;}
+                        #redflagcarrierinfo {position: absolute;right: 50%; margin-right: -208px; top: 49px; padding: 0 0 0 125px; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;z-index:1;}
+                        #gamespecific .blueflag {z-index: 2}
+                        #gamespecific .blueflag-player {z-index: 2}
                         #gamespecific #blueflag-name .rounds {margin-left: 50px;}
+                        #gamespecific .redflag {z-index: 2}
+                        #gamespecific .redlag-player {z-index: 2}
                         #gamespecific #redflag-name .rounds {margin-right: 50px;}
                     </style>
                 `
