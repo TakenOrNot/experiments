@@ -69,9 +69,15 @@
                     }
                     else {
                         //$( "#blueflag-name" ).replace(carriername,"<div id='blueflagcarrierinfo'><div class='carriername'>" + carriername + "</div><div class='health'></div></div>")
-                        $( "#blueflag-name" ).prepend("<div id='blueflagcarrierinfo'><div class='carriername'>");
-
-                        $( "</div><div class='health'></div></div>" ).insertBefore( $( "#blueflag-name > .rounds" ) );
+                        
+                        //$( "#blueflag-name" ).prepend("<div id='blueflagcarrierinfo'><div class='carriername'>");
+                        //$( "</div><div class='health'></div></div>" ).insertBefore( $( "#blueflag-name > .rounds" ) );
+                        
+                        //blueflagdiv = $( "#blueflag-name" ).html();
+                        
+                        $( "#blueflag-name" ).html().replace(carriername,"<div id='blueflagcarrierinfo'><div class='carriername'>" + carriername + "</div><div class='health'></div></div>")
+                        
+                        
                     }
                     var carrierobj = Players.getByName(carriername); 
                     var carrierid = carrierobj['id'];
