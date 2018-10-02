@@ -110,7 +110,9 @@
                         //$('#blueflagcarrierinfo').addClass('ship-' + carriership);
                         var carriershiparrindex = (carriership - 1);
                         $('#blueflagcarrierinfo > .ship').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "transparent");
-                        $('#blueflagcarrierinfo').css("background-color", "rgba(255,0,0,.25)");
+                        //$('#blueflagcarrierinfo').css("background-color", "rgba(255,0,0,.25)");
+                        $('#blueflagcarrierinfo').css("background-image", "linear-gradient(to left top, rgba(68, 0, 0, 0.5), rgba(230, 35, 35, 0.5), rgba(206, 0, 1, .5), rgba(152, 0, 1, 0.5), rgba(255, 0, 0, 0.75))");
+                            
                     }
                     
                     
@@ -166,7 +168,10 @@
                         //$('#redflagcarrierinfo').addClass('ship-' + carriership);
                         var carriershiparrindex = (carriership - 1);
                         $('#redflagcarrierinfo > .ship').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "transparent");
-                        $('#redflagcarrierinfo').css("background-color", "rgba(0,255,255,.25)");
+                        //$('#redflagcarrierinfo').css("background-color", "rgba(0,255,255,.25)");
+                        $('#redflagcarrierinfo').css("background-image", "linear-gradient(to right top, rgba(5, 25, 55, .5), rgba(0, 77, 122, .5), rgba(0, 135, 147, .5), rgba(0, 191, 114, 0), rgba(18, 235, 235, .8))");
+                            
+}
                         
                         //$('#redflagcarrierinfo').css('background-position',($('#redflag-name').width() - 58) + "px" + " 44px");
                     } 
