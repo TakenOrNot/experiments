@@ -29,11 +29,11 @@
 
         const carrierinfoStyle = `
                     <style id='carrierinfoStyle'>
-                        #blueflagcarrierinfo {position: absolute;left: 50%;margin-left: -208px; top: 50px; padding: 0 1em 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;}
-                        #redflagcarrierinfo {position: absolute;right: 50%; margin-right: -208px; top: 50px; padding: 0 1em 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;}
+                        #blueflagcarrierinfo {position: absolute;left: 50%;margin-left: -208px; top: 49px; padding: 0 1em 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;}
+                        #redflagcarrierinfo {position: absolute;right: 50%; margin-right: -208px; top: 49px; padding: 0 1em 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;}
                     
-                    
-
+                        #gamespecific #blueflag-name .rounds {margin-left: 50px;}
+                        #gamespecific #redflag-name .rounds {margin-right: 50px;}
                     </style>
                 `
         $('head').append ( carrierinfoStyle );
@@ -77,6 +77,9 @@
                     if (window.redcarrierhealth != carrierhealth){
                         //$('#blueflagcarrierinfo').html(carrierhealth);
                         $('#blueflagcarrierinfo').html(carrierhealth);
+                        
+                        $('#blueflagcarrierinfo').width($('#blueflag-name').width());
+                        $('#blueflagcarrierinfo').css( {marginLeft : "-" + ($('#blueflag-name').width() + 90) + "px"});
                     }
                     
                     if (window.redcarriership != carriership) {
