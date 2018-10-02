@@ -29,8 +29,8 @@
 
         const carrierinfoStyle = `
                     <style id='carrierinfoStyle'>
-                        #blueflagcarrierinfo {position: absolute;left: 50%;margin-left: -208px; top: 49px; padding: 0 125px 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;z-index:1;}
-                        #redflagcarrierinfo {position: absolute;right: 50%; margin-right: -208px; top: 49px; padding: 0 0 0 125px; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;z-index:1;}
+                        #blueflagcarrierinfo {position: absolute;left: 50%; top: 49px; padding: 0 105px 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;z-index:1;}
+                        #redflagcarrierinfo {position: absolute;right: 50%; top: 49px; padding: 0 0 0 105px; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;z-index:1;}
                         #gamespecific .blueflag {z-index: 2}
                         #gamespecific .blueflag-player {z-index: 2}
                         #gamespecific #blueflag-name .rounds {margin-left: 50px;}
@@ -81,7 +81,7 @@
                         //$('#blueflagcarrierinfo').html(carrierhealth);
                         $('#blueflagcarrierinfo').html(carrierhealth);
                         
-                        $('#blueflagcarrierinfo').width($('#blueflag-name').width());
+                        $('#blueflagcarrierinfo').width($('#blueflag-name').width() - 20);
                         $('#blueflagcarrierinfo').css( {marginLeft : "-" + ($('#blueflag-name').width() + 90) + "px"});
                     }
                     
