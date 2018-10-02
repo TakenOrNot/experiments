@@ -206,9 +206,9 @@
     
     SWAM.on ( 'gamePrep', function () {
         setTimeout(()=>{
-            $('#blueflagcarrierinfo').html('').removeClass();
+            //$('#blueflagcarrierinfo').html('').removeClass();
             $('#blueflagcarrierinfo').css({background: "none"}); 
-            $('#redflagcarrierinfo').html('').removeClass();
+            //$('#redflagcarrierinfo').html('').removeClass();
             $('#redflagcarrierinfo').css({background: "none"}); 
 
             // if gametype is ctf, set checkblueflag and checkredflag to true 
