@@ -85,7 +85,7 @@
             function checkbluecarry(){
                 var carriername = $( "#blueflag-name" ).justtext();
                 if (carriername.length > 0){ 
-                    
+                    $('#blueflagcarrierinfo').css({display: "block"});
                     
                     var carrierobj = Players.getByName(carriername); 
                     var carrierid = carrierobj['id'];
@@ -126,7 +126,8 @@
                     console.log("noone carrying blue flag");
                     //$('#blueflagcarrierinfo').html('').removeClass();
                     $('#blueflagcarrierinfo > .health').html('');
-                    $('#blueflagcarrierinfo').css({background: "none"});    
+                    //$('#blueflagcarrierinfo').css({background: "none"});
+                    $('#blueflagcarrierinfo').css({display: "none"});
                     clearInterval(window.checkblueflaginterval);
                     window.checkblueflag = '';
                     window.redcarriership = '';
@@ -140,6 +141,7 @@
             function checkredcarry(){
                 var carriername = $( "#redflag-name" ).justtext();
                 if (carriername.length > 0){ 
+                    $('#blueflagcarrierinfo').css({display: "block"});
                     
                     var carrierobj = Players.getByName(carriername); 
                     var carrierid = carrierobj['id'];
@@ -181,7 +183,8 @@
                     console.log("noone carrying red flag");
                     //$('#redflagcarrierinfo').html('').removeClass();
                     $('#redflagcarrierinfo > .health').html('')
-                    $('#redflagcarrierinfo').css({background: "none"}); 
+                    //$('#redflagcarrierinfo').css({background: "none"});
+                    $('#redflagcarrierinfo').css({display: "none"});
                     clearInterval(window.checkredflaginterval);
                     window.checkredflag = '';
                     window.bluecarriership = '';
@@ -231,10 +234,12 @@
     
     SWAM.on ( 'gamePrep', function () {
         setTimeout(()=>{
+            $('#blueflagcarrierinfo').css({display: "none"});
             //$('#blueflagcarrierinfo').html('').removeClass();
-            $('#blueflagcarrierinfo').css({background: "none"}); 
+            //$('#blueflagcarrierinfo').css({background: "none"}); 
+            $('#redflagcarrierinfo').css({display: "none"});
             //$('#redflagcarrierinfo').html('').removeClass();
-            $('#redflagcarrierinfo').css({background: "none"}); 
+            //$('#redflagcarrierinfo').css({background: "none"}); 
 
             // if gametype is ctf, set checkblueflag and checkredflag to true 
             // so we can check if flag is already out
