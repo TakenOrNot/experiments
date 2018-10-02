@@ -79,7 +79,7 @@
                     
                     if (window.redcarrierhealth != carrierhealth){
                         //$('#blueflagcarrierinfo').html(carrierhealth);
-                        $('#blueflagcarrierinfo').html(carrierhealth);
+                        $('#blueflagcarrierinfo').html("[" + carrierhealth + "]");
                         
                         $('#blueflagcarrierinfo').width($('#blueflag-name').width() - 20);
                         $('#blueflagcarrierinfo').css( {marginLeft : "-" + ($('#blueflag-name').width() + 90) + "px"});
