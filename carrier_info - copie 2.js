@@ -29,9 +29,7 @@
 
         const carrierinfoStyle = `
                     <style id='carrierinfoStyle'>
-                        #blueflagcarrierinfo {padding: 0 1em 0 100px; color: white;height: 35px; border-radius:100px;}
-                        #redflagcarrierinfo {padding: 0 1em 0 100px; color: white;height: 35px;  border-radius:100px;}
-                    
+                        
                     
 
                     </style>
@@ -50,9 +48,9 @@
     };
     
     /* GUI */
-    /*
+    
     $('body').append("<div id='blueflagcarrierinfo' style='position: absolute;left: 50%;margin-left: -208px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;'></div><div id='redflagcarrierinfo' style='position: absolute;right: 50%; margin-right: -208px; top: 1em; padding: 0 1em 0 0; color: white;height: 35px;width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;'></div>");
-    */
+    
     
     
     
@@ -64,14 +62,6 @@
                 var carriername = $( "#blueflag-name" ).justtext();
                 if (carriername.length > 0){ 
                     
-                    if ($('#blueflagcarrierinfo').lenght){
-                        
-                    }
-                    else {
-                        $( "#blueflag-name" ).prepend("<div id='blueflagcarrierinfo'><div class='carriername'>");
-
-                        $( "</div><div class='health'></div>" ).insertBefore( $( "#blueflag-name > .rounds" ) );
-                    }
                     var carrierobj = Players.getByName(carriername); 
                     var carrierid = carrierobj['id'];
                     var carrierteam = carrierobj['team'];
@@ -82,12 +72,11 @@
                     carrierhealth = Math.trunc(carrierhealth * 100);
                     
                     if (window.redcarrierhealth != carrierhealth){
-                        //$('#blueflagcarrierinfo').html(carrierhealth);
-                        $('#blueflagcarrierinfo > .health').html(carrierhealth);
+                        $('#blueflagcarrierinfo').html(carrierhealth);
                     }
                     
                     if (window.redcarriership != carriership) {
-                        //$('#blueflagcarrierinfo').addClass('ship-' + carriership);
+                        $('#blueflagcarrierinfo').addClass('ship-' + carriership);
                         var carriershiparrindex = (carriership - 1);
                         $('#blueflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "rgba(255,0,0,.25)");
                     }
@@ -103,8 +92,7 @@
                 }
                 else {
                     console.log("noone carrying blue flag");
-                    //$('#blueflagcarrierinfo').html('').removeClass();
-                    $('#blueflagcarrierinfo > .health').html('');
+                    $('#blueflagcarrierinfo').html('').removeClass();
                     $('#blueflagcarrierinfo').css({background: "none"});    
                     clearInterval(window.checkblueflaginterval);
                     window.checkblueflag = '';
