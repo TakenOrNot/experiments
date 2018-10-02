@@ -31,6 +31,22 @@
                     <style id='carrierinfoStyle'>
                         #blueflagcarrierinfo {position: absolute;left: 50%; top: 49px; padding: 0 105px 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;z-index:1;}
                         #redflagcarrierinfo {position: absolute;right: 50%; top: 49px; padding: 0 0 0 105px; color: white;height: 35px;min-width: 80px;text-align: left; line-height: 35px; vertical-align: middle; border-radius:100px;z-index:1;}
+                        #redflagcarrierinfo .ship {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            width: 44px;
+                            height: 35px;
+                        }
+                        #blueflagcarrierinfo .ship {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 44px;
+                            height: 35px;
+                        }
+    
+    
                         #gamespecific .blueflag {z-index: 2;}
                         #gamespecific .blueflag-player {z-index: 2;}
                         #gamespecific #blueflag-name {z-index: 2;}
@@ -90,7 +106,8 @@
                     if (window.redcarriership != carriership) {
                         //$('#blueflagcarrierinfo').addClass('ship-' + carriership);
                         var carriershiparrindex = (carriership - 1);
-                        $('#blueflagcarrierinfo > .ship').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "rgba(255,0,0,.25)");
+                        $('#blueflagcarrierinfo > .ship').css({background: shipstylearray[carriershiparrindex] });
+                        $('#blueflagcarrierinfo').css("background-color", "rgba(255,0,0,.25)");
                     }
                     
                     
@@ -140,6 +157,7 @@
                         //$('#redflagcarrierinfo').addClass('ship-' + carriership);
                         var carriershiparrindex = (carriership - 1);
                         $('#redflagcarrierinfo > .ship').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "rgba(0,255,255,.25)");
+                        $('#redflagcarrierinfo').css("background-color", "rgba(0,255,255,.25)");
                         
                         //$('#redflagcarrierinfo').css('background-position',($('#redflag-name').width() - 58) + "px" + " 44px");
                     } 
