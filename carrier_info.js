@@ -23,7 +23,50 @@
     
     SWAM.on ( 'gameLoaded', init );
     
+    function createSettingsProvider()
+    {
+        // This is the handler that will be executed when new settings are applied
+        function onApply(values)
+        {
+            console.log ("CarrierInfo settings applied: ", values);
+            settings = values;
+
+            if (settings.CIcustomize === true){
+                console.log("CI custom style !!");
+                const CIoptionnalStyle = `
+                    <style id='CIoptionnalStyle'>
+                        #gamespecific #redflag-name .rounds {background: rgba(199, 0, 51, .5); border-top: 1px inset rgba(0, 0, 0, 0.9);}
+                        #gamespecific #blueflag-name .rounds {background: rgba(30, 30, 247, .5);border-top: 1px inset rgba(0, 0, 0, 0.44);}
+                    </style>
+                `
+                if ( $( "#CIoptionnalStyle" ).length ) {
+                    // if element already exist, dont add it again
+                }
+                else {
+                    $('head').append ( CIoptionnalStyle );
+                }
+            } 
+            else {
+                $('#CIoptionnalStyle').remove(); 
+                
+            }
+        }
+        
+        // Default values for the settings
+        let settings = {
+            CIcustomize: false,
+            // values1: "default",
+            
+        };
+
+        let sp = new SettingsProvider(settings, onApply);
     
+        let section = sp.addSection("Look & feel");
+        section.addBoolean("CIcustomize", "Customize game specific appearance");
+               
+        // we return our SettingsProvider instance
+        return sp;
+    }
     
     function initStyle () {
 
@@ -56,6 +99,10 @@
                         #gamespecific #redflag-name {z-index: 2;}
                         #gamespecific .redlag-player {z-index: 2;}
                         #gamespecific #redflag-name .rounds {margin-right: 50px;z-index: 2;}
+
+                        
+
+                        
                     </style>
                 `
         $('head').append ( carrierinfoStyle );
