@@ -29,8 +29,8 @@
 
         const carrierinfoStyle = `
                     <style id='carrierinfoStyle'>
-                        #blueflagcarrierinfo {padding: 0 1em 0 100px; color: white;height: 35px; border-radius:100px;}
-                        #redflagcarrierinfo {padding: 0 1em 0 100px; color: white;height: 35px;  border-radius:100px;}
+                        #blueflagcarrierinfo {position: absolute;left: 50%;margin-left: -208px; top: 50px; padding: 0 1em 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;}
+                        #redflagcarrierinfo {position: absolute;right: 50%; margin-right: -208px; top: 50px; padding: 0 1em 0 0; color: white;height: 35px;min-width: 80px;text-align: right; line-height: 35px; vertical-align: middle; border-radius:100px;}
                     
                     
 
@@ -64,21 +64,7 @@
                 var carriername = $( "#blueflag-name" ).justtext();
                 if (carriername.length > 0){ 
                     
-                    if ($('#blueflagcarrierinfo').lenght){
-                        
-                    }
-                    else {
-                        //$( "#blueflag-name" ).replace(carriername,"<div id='blueflagcarrierinfo'><div class='carriername'>" + carriername + "</div><div class='health'></div></div>")
-                        
-                        //$( "#blueflag-name" ).prepend("<div id='blueflagcarrierinfo'><div class='carriername'>");
-                        //$( "</div><div class='health'></div></div>" ).insertBefore( $( "#blueflag-name > .rounds" ) );
-                        
-                        //blueflagdiv = $( "#blueflag-name" ).html();
-                        
-                        $( "#blueflag-name" ).html().replace(carriername,"<div id='blueflagcarrierinfo'><div class='carriername'>" + carriername + "</div><div class='health'></div></div>")
-                        
-                        
-                    }
+                    
                     var carrierobj = Players.getByName(carriername); 
                     var carrierid = carrierobj['id'];
                     var carrierteam = carrierobj['team'];
@@ -90,7 +76,7 @@
                     
                     if (window.redcarrierhealth != carrierhealth){
                         //$('#blueflagcarrierinfo').html(carrierhealth);
-                        $('#blueflagcarrierinfo > .health').html(carrierhealth);
+                        $('#blueflagcarrierinfo').html(carrierhealth);
                     }
                     
                     if (window.redcarriership != carriership) {
