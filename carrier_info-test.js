@@ -169,7 +169,7 @@
                         var carriershiparrindex = (carriership - 1);
                         $('#redflagcarrierinfo > .ship').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "transparent");
                         //$('#redflagcarrierinfo').css("background-color", "rgba(0,255,255,.25)");
-                        $('#redflagcarrierinfo').css("background-image", "linear-gradient(to right top, rgba(5, 25, 55, .5), rgba(0, 77, 122, .5), rgba(0, 135, 147, .5), rgba(0, 191, 114, 0), rgba(18, 235, 235, .8))");
+                        $('#redflagcarrierinfo').css("background-image", "linear-gradient(to right top, rgba(5, 25, 55, .5), rgba(0, 77, 122, .5), rgba(0, 135, 147, .5), rgba(3, 102, 107, 0.5), rgba(18, 235, 235, .8))");
                             
                     }
                         
