@@ -128,11 +128,14 @@
                     carrierhealth = Math.trunc(carrierhealth * 100);
                     
                     if (window.bluecarrierhealth != carrierhealth){
-                        $('#redflagcarrierinfo').html(carrierhealth);
+                        $('#redflagcarrierinfo').html("[" + carrierhealth + "]");
+                        
+                        $('#redflagcarrierinfo').width($('#redflag-name').width() - 20);
+                        $('#redflagcarrierinfo').css( {marginRight : "-" + ($('#redflag-name').width() + 90) + "px"});
                     }
                     
                     if (window.bluecarriership != carriership) {
-                        $('#redflagcarrierinfo').addClass('ship-' + carriership);
+                        //$('#redflagcarrierinfo').addClass('ship-' + carriership);
                         var carriershiparrindex = (carriership - 1);
                         $('#redflagcarrierinfo').css({background: shipstylearray[carriershiparrindex] }).css("background-color", "rgba(0,255,255,.25)");
                     }
