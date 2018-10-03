@@ -35,7 +35,7 @@
                 console.log("CI custom style !!");
                 const CIoptionnalStyle = `
                     <style id='CIoptionnalStyle'>
-                        #gamespecific #blueflag-name .rounds {background: rgba(0, 177, 189, 0.5);border-top: 1px inset rgba(0, 0, 0, 0.44); color: #ff6a38;}
+                        #gamespecific #blueflag-name .rounds {background: rgba(0, 177, 189, 0.5);border-top: 1px inset rgba(0, 0, 0, 0.9); color: #ff6a38;}
                         #gamespecific #redflag-name .rounds {background: rgba(199, 0, 51, .5); border-top: 1px inset rgba(0, 0, 0, 0.9); color: #8cd7d8;}
                         
                     </style>
