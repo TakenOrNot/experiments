@@ -319,7 +319,9 @@
             }
             else {
                 window.checkblueflag = '';
+                clearInterval(window.checkblueflaginterval);
                 window.checkredflag = '';
+                clearInterval(window.checkredflaginterval);
             }
             window.redcarriership = '';
             window.redcarrierhealth = '';
