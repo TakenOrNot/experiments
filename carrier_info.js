@@ -292,11 +292,16 @@
     
     
     SWAM.on ( 'gamePrep', function () {
+        $('#blueflagcarrierinfo').css({display: "none"});
+        $('#redflagcarrierinfo').css({display: "none"});
         setTimeout(()=>{
-            $('#blueflagcarrierinfo').css({display: "none"});
+            //$('#blueflagcarrierinfo').css({display: "none"});
+            
             //$('#blueflagcarrierinfo').html('').removeClass();
             //$('#blueflagcarrierinfo').css({background: "none"}); 
-            $('#redflagcarrierinfo').css({display: "none"});
+            
+            //$('#redflagcarrierinfo').css({display: "none"});
+            
             //$('#redflagcarrierinfo').html('').removeClass();
             //$('#redflagcarrierinfo').css({background: "none"}); 
 
