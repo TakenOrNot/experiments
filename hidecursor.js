@@ -73,39 +73,46 @@
         */
         $(function () {
             var timer;
-            var fadeInBuffer = false;
+            var hidecursor = false;
+            var cursorlock = false;
             $('#gamecanvas').mousemove(function () {
-                if (!fadeInBuffer) {
-                    if (timer) {
-                        console.log("clearTimer");
-                        clearTimeout(timer);
-                        timer = 0;
+                if (!cursorlock) {
+                    if (!hidecursor) {
+                        if (timer) {
+                            console.log("clearTimer");
+                            clearTimeout(timer);
+                            timer = 0;
+                        }
+
+                            console.log("fadeIn");
+                        $('html').css({
+                            cursor: ''
+                        });
+                    } else {
+                         $('#gamecanvas').css({
+                            cursor: 'default'
+                        });
+                        hidecursor = false;
                     }
 
-                        console.log("fadeIn");
-                    $('html').css({
-                        cursor: ''
-                    });
-                } else {
-                     $('#gamecanvas').css({
-                        cursor: 'default'
-                    });
-                    fadeInBuffer = false;
+
+                    timer = setTimeout(function () {
+                        console.log("fadeout");
+                         $('#gamecanvas').css({
+                            cursor: 'none'
+                        });
+
+                        hidecursor = true;
+                        cursorlock = false;
+                    }, 2000)
+                    cursorlock = true;
                 }
-
-
-                timer = setTimeout(function () {
-                    console.log("fadeout");
-                     $('#gamecanvas').css({
-                        cursor: 'none'
-                    });
-
-                    fadeInBuffer = true;
-                }, 2000)
+                
             });
+            
             $('#gamecanvas').css({
-                        cursor: 'default'
-                    });
+                cursor: 'default'
+            });
         });
     
     });
