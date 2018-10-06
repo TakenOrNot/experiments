@@ -47,7 +47,7 @@
             // if element already exist, dont add it again
         }
         else {
-            $('canvas').attr('id', 'gamecanvas');
+            $('body > canvas').attr('id', 'gamecanvas');
             //if ($("#gamecanvas").css("cursor") == "auto" ||  $("#gamecanvas").css("cursor") == "inherit"){
                 $( "#gamecanvas" ).css({cursor: "none"});
             //}
@@ -74,7 +74,7 @@
         $(function () {
             var timer;
             var fadeInBuffer = false;
-            $(document).mousemove(function () {
+            $('#gamecanvas').mousemove(function () {
                 if (!fadeInBuffer) {
                     if (timer) {
                         console.log("clearTimer");
