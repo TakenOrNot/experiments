@@ -48,10 +48,12 @@
         }
         else {
             $('canvas').attr('id', 'gamecanvas');
+            $(this).css({cursor: "none"});
         }
         
         
         $( "#gamecanvas" ).mousemove(function( event ) {
+            /*
             if ( $(this).hasClass('showcursor') ) {
                 
             }
@@ -63,6 +65,8 @@
                     $(this).removeClass('showcursor');
                 },30000); 
             }
+            */
+            $(this).css({cursor: "inherit"});
         });
     
     });
