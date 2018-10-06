@@ -67,6 +67,9 @@
             }
             */
             $(this).css({cursor: "inherit"});
+            window.setTimeout(function () {
+                $(this).css({cursor: "none"});
+            },10000); 
         });
     
     });
