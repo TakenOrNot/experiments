@@ -1,5 +1,5 @@
 // ------------------------------------------------------------------------
-//   Carrier Info for StarMash
+//   Hide Cursor for StarMash
 // ------------------------------------------------------------------------
 !function () {
     /* INIT */
@@ -84,7 +84,7 @@
                             timer = 0;
                         }
 
-                            console.log("fadeIn");
+                            console.log("show cursor");
                         $('html').css({
                             cursor: ''
                         });
@@ -97,14 +97,14 @@
 
 
                     timer = setTimeout(function () {
-                        console.log("fadeout");
+                        console.log("hide cursor");
                          $('#gamecanvas').css({
                             cursor: 'none'
                         });
 
                         hidecursor = true;
                         cursorlock = false;
-                    }, 2000)
+                    }, 5000)
                     cursorlock = true;
                 }
                 
