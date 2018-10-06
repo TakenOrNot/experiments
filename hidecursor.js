@@ -48,7 +48,10 @@
         }
         else {
             $('canvas').attr('id', 'gamecanvas');
-            $( "#gamecanvas" ).css({cursor: "none"});
+            if ($("#gamecanvas").css("cursor") == "inherit" ){
+                $( "#gamecanvas" ).css({cursor: "none"});
+            }
+            
         }
         
         
@@ -66,9 +69,15 @@
                 },30000); 
             }
             */
-            $( "#gamecanvas" ).css({cursor: "inherit"});
+            if ($("#gamecanvas").css("cursor") == "none" ){
+                $( "#gamecanvas" ).css({cursor: "inherit"});
+            }
             window.setTimeout(function () {
-                $( "#gamecanvas" ).css({cursor: "none"});
+                
+                if ($("#gamecanvas").css("cursor") == "inherit" ){
+                    $( "#gamecanvas" ).css({cursor: "none"});
+                }
+                
             },10000); 
         });
     
