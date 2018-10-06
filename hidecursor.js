@@ -48,7 +48,7 @@
         }
         else {
             $('canvas').attr('id', 'gamecanvas');
-            if ($("#gamecanvas").css("cursor") == "inherit" ){
+            if ($("#gamecanvas").css("cursor") == "auto" ||  $("#gamecanvas").css("cursor") == "inherit"){
                 $( "#gamecanvas" ).css({cursor: "none"});
             }
             
@@ -74,7 +74,7 @@
             }
             window.setTimeout(function () {
                 
-                if ($("#gamecanvas").css("cursor") == "inherit" ){
+                if ($("#gamecanvas").css("cursor") == "auto" ||  $("#gamecanvas").css("cursor") == "inherit"){
                     $( "#gamecanvas" ).css({cursor: "none"});
                 }
                 
