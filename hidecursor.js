@@ -106,7 +106,7 @@
             $('#gamecanvas').css({
                         cursor: 'default'
                     });
-        //});
+        });
     
     });
    
