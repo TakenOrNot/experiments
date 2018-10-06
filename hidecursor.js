@@ -54,8 +54,8 @@
             
         }
         
-        
-        $( "#gamecanvas" ).mousemove(function( event ) {
+        $( "#gamecanvas" ).one('mousemove', function(e) {
+        //$( "#gamecanvas" ).mousemove(function( event ) {
             /*
             if ( $(this).hasClass('showcursor') ) {
                 
