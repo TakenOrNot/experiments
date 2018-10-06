@@ -48,7 +48,7 @@
         }
         else {
             $('canvas').attr('id', 'gamecanvas');
-            $(this).css({cursor: "none"});
+            $( "#gamecanvas" ).css({cursor: "none"});
         }
         
         
@@ -66,9 +66,9 @@
                 },30000); 
             }
             */
-            $(this).css({cursor: "inherit"});
+            $( "#gamecanvas" ).css({cursor: "inherit"});
             window.setTimeout(function () {
-                $(this).css({cursor: "none"});
+                $( "#gamecanvas" ).css({cursor: "none"});
             },10000); 
         });
     
