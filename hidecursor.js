@@ -125,7 +125,7 @@
     SWAM.registerExtension ({
         name: 'HideCursor',
         id: 'HideCursor',
-        description: '',
+        description: 'Hide cursor after 5 seconds idle',
         version: '0.0.1',
         //settingsProvider: createSettingsProvider(),
         author: 'xplay'
